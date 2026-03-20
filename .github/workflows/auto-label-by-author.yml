@@ -21,7 +21,7 @@ jobs:
             // GitHub ID -> [조 라벨, 이름 라벨]
             // 필요하면 아래에 계속 추가하면 됩니다.
             const map = {
-              "junseochoi": ["파트장", "최준서"],
+              "evan7484": ["파트장", "최준서"],
               "woornjspractice" : ["2조", "권태우"],
               "leedongkyu0701": ["2조", "이동규"],
               "wooooyun": ["2조", "우윤제"],

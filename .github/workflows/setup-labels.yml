@@ -1,0 +1,67 @@
+name: Setup Labels
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  setup-labels:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create or update labels
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // 라벨 정의: [이름, 색상]
+            const labels = [
+              // 조 라벨
+              { name: "1조", color: "0366d6", description: "1조" },
+              { name: "2조", color: "28a745", description: "2조" },
+              
+              // 이름 라벨
+              { name: "김소혜", color: "6f42c1", description: "김소혜" },
+              { name: "이준우", color: "ffc107", description: "이준우" },
+              { name: "변동진", color: "fd7e14", description: "변동진" },
+              { name: "안채빈", color: "e83e8c", description: "안채빈" },
+              { name: "최준서", color: "17a2b8", description: "최준서 (파트장)" },
+              { name: "권태우", color: "6c757d", description: "권태우" },
+              { name: "이동규", color: "007bff", description: "이동규" },
+              { name: "우윤제", color: "20c997", description: "우윤제" },
+              { name: "김민서", color: "dc3545", description: "김민서" },
+              { name: "김준호", color: "ffc107", description: "김준호" }
+            ];
+
+            for (const label of labels) {
+              try {
+                // 라벨 생성 시도
+                await github.rest.issues.createLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  name: label.name,
+                  color: label.color,
+                  description: label.description
+                });
+                core.info(`✓ Created label: ${label.name}`);
+              } catch (error) {
+                if (error.status === 422) {
+                  // 라벨이 이미 존재하면 업데이트
+                  try {
+                    await github.rest.issues.updateLabel({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      name: label.name,
+                      color: label.color,
+                      description: label.description
+                    });
+                    core.info(`✓ Updated label: ${label.name}`);
+                  } catch (updateError) {
+                    core.error(`✗ Failed to update label ${label.name}: ${updateError.message}`);
+                  }
+                } else {
+                  core.error(`✗ Failed to create label ${label.name}: ${error.message}`);
+                }
+              }
+            }

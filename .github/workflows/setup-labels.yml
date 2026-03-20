@@ -21,6 +21,9 @@ jobs:
               { name: "1조", color: "0366d6", description: "1조" },
               { name: "2조", color: "28a745", description: "2조" },
               
+              // 역할 라벨
+              { name: "파트장", color: "d4af37", description: "파트장" },
+              
               // 이름 라벨
               { name: "김소혜", color: "6f42c1", description: "김소혜" },
               { name: "이준우", color: "ffc107", description: "이준우" },
@@ -31,7 +34,7 @@ jobs:
               { name: "이동규", color: "007bff", description: "이동규" },
               { name: "우윤제", color: "20c997", description: "우윤제" },
               { name: "김민서", color: "dc3545", description: "김민서" },
-              { name: "김준호", color: "ffc107", description: "김준호" }
+              { name: "김준호", color: "f0883e", description: "김준호" }
             ];
 
             for (const label of labels) {

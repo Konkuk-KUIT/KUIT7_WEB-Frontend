@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danggn</title>
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <!-- 상단 헤더 -->
+    <header class="region-header">
+      <div class="region-header__region">
+        <span class="region-header__region-name">군자동</span>
+        <button>
+          <img src="./assets/select.svg" alt=" 지역 선택 아이콘" />
+        </button>
+      </div>
+      <div class="region-header__icons">
+        <button>
+          <img src="./assets/search.svg" alt="검색 버튼" />
+        </button>
+        <button>
+          <img src="./assets/menu.svg" alt="리스트 버튼" />
+        </button>
+        <button>
+          <img src="./assets/alarm.svg" alt="알람 버튼" />
+        </button>
+      </div>
+    </header>
+    <!-- 메인 섹션 -->
+    <main class="post-list">
+      <nav class="post-list__category">
+        <button class="post-list__category-btn">동네소식</button>
+        <button class="post-list__category-btn">🙌 같이해요</button>
+        <button class="post-list__category-btn">동네질문</button>
+        <button class="post-list__category-btn">동네맛집</button>
+        <button class="post-list__category-btn">취미생활</button>
+      </nav>
+      <section class="banner">
+        <img src="./assets/banner.png" alt="배너 이미지" />
+        <div class="banner__content">
+          <h3 class="banner__title">
+            당근이웃과 함께하는 장도연의 동네생활!🥕
+          </h3>
+          <p class="banner__desc">가나디님 지금 바로 구경해보세요!</p>
+        </div>
+      </section>
+      <section class="post-list__posts">
+        <article class="post">
+          <div class="post__tag">
+            <p>🙌 같이해요</p>
+          </div>
+          <div class="post__header">
+            <div class="post__header-wrapper">
+              <span class="post__header-status">모집중</span>
+              <h2 class="post__header-text">맥주마실 사람~~</h2>
+            </div>
+            <div class="post__header-summary">
+              <p>쪽지 주세요 고고!</p>
+            </div>
+          </div>
+          <div class="post__meta">
+            <div class="post__meta-item">
+              <img src="./assets/chat.svg" alt="채팅 아이콘" />
+              <span>누구나 참여 가능</span>
+            </div>
+            <div class="post__meta-item">
+              <img src="./assets/group.svg" alt="그룹 아이콘" />
+              <span>2/4 참여</span>
+            </div>
+          </div>
+          <div class="post__footer">
+            <div class="post__footer-left">
+              <span class="post__author">요우우</span>
+              <span>·</span>
+              <span class="post__location">화양동</span>
+            </div>
+            <div class="post__time">
+              <span>3분 전</span>
+            </div>
+          </div>
+        </article>
+        <article class="post">
+          <div class="post__tag">
+            <p>동네질문</p>
+          </div>
+
+          <div class="post__header">
+            <div class="post__header-wrapper">
+              <span class="post__header-status">Q.</span>
+              <h2 class="post__header-text">
+                혼밥은 다들 어디서 하시나요? 뻘쭘하지 않고 사장님들께 안 미안한
+                곳, 어디든 리스트업해서 한번씩 가보려구요. 부탁드립니다!
+              </h2>
+            </div>
+          </div>
+
+          <div class="post__footer">
+            <div class="post__footer-left">
+              <span class="post__author">도우영</span>
+              <span>·</span>
+              <span class="post__location">화양동</span>
+            </div>
+            <div class="post__time">
+              <span>15분 전</span>
+            </div>
+          </div>
+
+          <div class="post__comment">
+            <div class="post__comment-item">
+              <img src="./assets/check-circle.svg" alt="궁금해요 아이콘" />
+              <span>궁금해요</span>
+            </div>
+            <div class="post__comment-item">
+              <img src="./assets/comment.svg" alt="답변 아이콘" />
+              <span>답변 2</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post">
+          <div class="post__tag">
+            <p>동네맛집</p>
+          </div>
+
+          <div class="post__header">
+            <div class="post__header-wrapper">
+              <h2 class="post__header-text">송정동 밥집 추천 부탁드려요</h2>
+            </div>
+            <div class="post__header-summary">
+              <p>퇴근하고 뭐 해먹기 귀찮을때 먹을만한 곳이요.</p>
+              <p>... 더보기</p>
+            </div>
+          </div>
+
+          <div class="post__footer">
+            <div class="post__footer-left">
+              <span class="post__author">카리</span>
+              <span>·</span>
+              <span class="post__location">화양동</span>
+            </div>
+            <div class="post__time">
+              <span>17분 전</span>
+            </div>
+          </div>
+
+          <div class="post__comment">
+            <div class="post__comment-item">
+              <img src="./assets/smile.svg" alt="공감하기 아이콘" />
+              <span>공감하기</span>
+            </div>
+            <div class="post__comment-item">
+              <img src="./assets/comment.svg" alt="댓글 아이콘" />
+              <span>댓글 2</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post">
+          <div class="post__tag">
+            <p>분실/실종센터</p>
+          </div>
+
+          <div class="post__header">
+            <div class="post__header-wrapper">
+              <span class="post__header-status">찾아요</span>
+              <h2 class="post__header-text">
+                카드 지갑을 분실했습니다. 발견하시면 사례하겠습니다. 꼭
+                찾아주세요.
+              </h2>
+            </div>
+          </div>
+
+          <div class="post__gallery">
+            <img
+              src="./assets/wallet-1.png"
+              alt="분실한 지갑 사진 1"
+              class="wallet-img1"
+            />
+            <img
+              src="./assets/wallet-2.png"
+              alt="분실한 지갑 사진 2"
+              class="wallet-img2"
+            />
+          </div>
+
+          <div class="post__place">
+            <div class="post__place-icon">
+              <span class="post__place-deco post__place-deco--1"></span>
+              <span class="post__place-deco post__place-deco--2"></span>
+              <span class="post__place-deco post__place-deco--3"></span>
+              <span class="post__place-deco post__place-deco--4"></span>
+
+              <img src="./assets/location-orange.svg" alt="위치 아이콘" />
+            </div>
+            <div class="post__place-content">
+              <p class="post__place-title">파리게이츠</p>
+              <p class="post__place-address">서울특별시 광진구 동일로 350</p>
+            </div>
+          </div>
+
+          <div class="post__footer">
+            <div class="post__footer-left">
+              <span class="post__author">Maro</span>
+              <span>·</span>
+              <span class="post__location">중곡동</span>
+            </div>
+            <div class="post__time">
+              <span>1시간 전</span>
+            </div>
+          </div>
+
+          <div class="post__comment">
+            <div class="post__comment-item">
+              <img src="./assets/smile.svg" alt="공감하기 아이콘" />
+              <span>공감하기</span>
+            </div>
+            <div class="post__comment-item">
+              <img src="./assets/comment.svg" alt="댓글 아이콘" />
+              <span>댓글쓰기</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post post--image">
+          <div class="post__tag">
+            <p>분실/실종센터</p>
+          </div>
+
+          <div class="post__header">
+            <div class="post__header-wrapper">
+              <span class="post__header-status">찾아요</span>
+              <h2 class="post__header-text">
+                카드 지갑을 분실했습니다. 발견하시면 사례하겠습니다. 꼭
+                찾아주세요.
+              </h2>
+            </div>
+          </div>
+
+          <div class="post__gallery">
+            <img
+              src="./assets/wallet-1.png"
+              alt="분실한 지갑 사진 1"
+              class="wallet-img1"
+            />
+            <img
+              src="./assets/wallet-2.png"
+              alt="분실한 지갑 사진 2"
+              class="wallet-img2"
+            />
+          </div>
+
+          <div class="post__place">
+            <div class="post__place-icon">
+              <span class="post__place-deco post__place-deco--1"></span>
+              <span class="post__place-deco post__place-deco--2"></span>
+              <span class="post__place-deco post__place-deco--3"></span>
+              <span class="post__place-deco post__place-deco--4"></span>
+
+              <img src="./assets/location-orange.svg" alt="위치 아이콘" />
+            </div>
+            <div class="post__place-content">
+              <p class="post__place-title">파리게이츠</p>
+              <p class="post__place-address">서울특별시 광진구 동일로 350</p>
+            </div>
+          </div>
+
+          <div class="post__footer">
+            <div class="post__footer-left">
+              <span class="post__author">Maro</span>
+              <span>·</span>
+              <span class="post__location">중곡동</span>
+            </div>
+            <div class="post__time">
+              <span>1시간 전</span>
+            </div>
+          </div>
+
+          <div class="post__comment">
+            <div class="post__comment-item">
+              <img src="./assets/smile.svg" alt="공감하기 아이콘" />
+              <span>공감하기</span>
+            </div>
+            <div class="post__comment-item">
+              <img src="./assets/comment.svg" alt="댓글 아이콘" />
+              <span>댓글쓰기</span>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <nav class="bottom-bar">
+        <button class="bottom-bar__btn">
+          <img src="./assets/home.svg" alt="홈 버튼" />
+          <span>홈</span>
+        </button>
+        <button class="bottom-bar__btn">
+          <img src="./assets/community.svg" alt="동네생활 버튼" />
+          <span>동네생활</span>
+        </button>
+        <button class="bottom-bar__btn">
+          <img src="./assets/location.svg" alt="내 근처 버튼" />
+          <span>내 근처</span>
+        </button>
+        <button class="bottom-bar__btn">
+          <img src="./assets/chatting.svg" alt="채팅 버튼" />
+          <span>채팅</span>
+        </button>
+        <button class="bottom-bar__btn">
+          <img src="./assets/profile.svg" alt="내 정보 버튼" />
+          <span>나의 당근</span>
+        </button>
+      </nav>
+    </footer>
+  </body>
+</html>

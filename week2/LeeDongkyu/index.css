@@ -60,6 +60,11 @@ button {
   border-bottom: 4px solid #eeeeee;
 }
 
+.banner img {
+  width: 40px;
+  height: 40px;
+}
+
 .banner__content {
   display: flex;
   flex-direction: column;
@@ -274,6 +279,7 @@ button {
   position: fixed;
   bottom: 0;
   width: 390px;
+  z-index: 10;
   display: flex;
   padding: 8px 0;
   align-items: flex-start;
@@ -294,6 +300,22 @@ button {
   font-size: 10px;
   font-weight: 400;
   line-height: 14px;
+}
+
+.plus-btn {
+  position: fixed;
+  bottom: 80px;
+ right: calc((100vw - 390px) / 2 + 16px);
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  background-color: #ff7e36;
+  display: flex;
+padding: 12px;
+align-items: flex-start;
+gap: 10px;
+z-index: 10;
+box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
 }
 
 .post-list {

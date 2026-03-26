@@ -154,6 +154,10 @@ body {
     font-weight: 700;
     line-height: 20px; /* 125% */
 }
+.list-row {
+    display: flex;
+    align-items: center;
+}
 .my-act__list {
     padding: 10px 16px;
     display: flex;
@@ -163,7 +167,7 @@ body {
 .act-text {
     width: 232px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     color: #000;
     /* 16 */
     font-family: Inter;

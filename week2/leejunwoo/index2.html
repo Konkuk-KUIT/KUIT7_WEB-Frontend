@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index2.css">
+    <link rel="stylesheet" href="./reset.css">
     <title>Danggn2</title>
 </head>
 <body>
@@ -37,13 +39,13 @@
         <img src="./asset2/profile.svg" alt="프로필 사진" class="profile">
         <div class="profile-sec">
             <span class="profile__text-b">당근이웃과 함께하는 장도연의 동네생활!🥕</span>
-            <span class="profil__text-s">가나다님 지금 바로 구경해보세요!</span>
+            <span class="profile__text-s">가나다님 지금 바로 구경해보세요!</span>
         </div>
     </section>
     <div class="divider"></div>
     <!--게시글-->
     <article class="art-with">
-        <div class="art-type">🙌 같이해요</div>
+        <span class="art-type">🙌 같이해요</span>
         <div class="art__content">
             <span class="art__content-title">
                 <span class="title-tag">모집중</span>
@@ -51,19 +53,21 @@
             </span>
             <span class="art__content-content">쪽지 주세요 고고!!</span>
         </div>
-        <div class="par-req"><img src="./asset2/parti.svg" alt="참여 조건" class="part-req-img">누구나 참여 가능</div>
+        <div class="par-req">
+            <img src="./asset2/parti.svg" alt="참여 조건" class="part-req-img">누구나 참여 가능
+        </div>
         <div class="par-peo"><img src="./asset2/people.svg" alt="참여 인원" class="people">2/4명 참여</div>
         <div class="writer">
             <span class="writer-name">요우우 · 화양동</span>
             <span class="writer-time">3분 전</span>
         </div>
-    <div class="divider"></div>
     </article>
+    <div class="divider"></div>
     <article class="question">
-        <div class="art-type">동네질문</div>
+        <span class="art-type">동네질문</span>
         <div class="art__content">
             <span class="art__content-title">
-                <span class="title-tag">Q</span>
+                <span class="title-tag">Q.</span>
                 혼밥은 다들 어디서 하시나요? 뻘쭘하지 않고 사장님들께 안 미안한 곳, 어디든 리스트업해서 한번씩 가보려구요. 부탁드립니다!
             </span>
         </div>
@@ -88,10 +92,10 @@
     </div>
     <div class="divider"></div>
     <article class="mat">
-        <div class="art-type">동네맛집</div>
+        <span class="art-type">동네맛집</span>
         <div class="art__content">
             <span class="art__content-title">
-                송정동 밥집 추천 부탁드려요
+                송정동 밥집 추천 부탁드려요<br>
                 퇴근하고 뭐 해먹기 귀찮을때 먹을만한 곳이요.
             </span>
             <button class="more-btn">... 더보기</button>
@@ -117,21 +121,23 @@
     </div>
     <div class="divider"></div>
     <article class="lost">
-        <div class="art-type">분실/실종센터</div>
+        <span class="art-type">분실/실종센터</span>
         <div class="art__content">
-            <span class="title-tag">찾아요</span>
             <span class="art__content-title">
+                <span class="title-tag">찾아요</span>
                 카드 지갑을 분실했습니다. 발견하시면 사례하겠습니다. 꼭 찾아주세요.
             </span>
         </div>
         <div class="art-img">
-            <img src="./asset2/wallet1.svg" alt="지갑사진 1" class="wallet1">
-            <img src="./asset2/wallet2.svg" alt="지갑사진 2" class="wallet2">
+            <img src="./asset2/wallet1.svg" alt="지갑사진 1" class="wallet">
+            <img src="./asset2/wallet2.svg" alt="지갑사진 2" class="wallet">
         </div>
         <div class="loc">
             <img src="./asset2/map.svg" alt="지도이미지" class="loc-img">
-            <span class="store">파리게이츠</span>
-            <span class="detail">서울특별시 광진구 동일로 350</span>
+            <div class="store-detail">
+                <span class="store">파리게이츠</span>
+                <span class="detail">서울특별시 광진구 동일로 350</span>
+            </div>
         </div>
         <div class="writer">
             <span class="writer-name">Maro · 중곡동</span>
@@ -154,21 +160,23 @@
     </div>
     <div class="divider"></div>
     <article class="lost">
-        <div class="art-type">분실/실종센터</div>
+        <span class="art-type">분실/실종센터</span>
         <div class="art__content">
-            <span class="title-tag">찾아요</span>
             <span class="art__content-title">
+                <span class="title-tag">찾아요</span>
                 카드 지갑을 분실했습니다. 발견하시면 사례하겠습니다. 꼭 찾아주세요.
             </span>
         </div>
         <div class="art-img">
-            <img src="./asset2/wallet1.svg" alt="지갑사진 1" class="wallet1">
-            <img src="./asset2/wallet2.svg" alt="지갑사진 2" class="wallet2">
+            <img src="./asset2/wallet1.svg" alt="지갑사진 1" class="wallet">
+            <img src="./asset2/wallet2.svg" alt="지갑사진 2" class="wallet">
         </div>
         <div class="loc">
             <img src="./asset2/map.svg" alt="지도이미지" class="loc-img">
-            <span class="store">파리게이츠</span>
-            <span class="detail">서울특별시 광진구 동일로 350</span>
+            <div class="store-detail">
+                <span class="store">파리게이츠</span>
+                <span class="detail">서울특별시 광진구 동일로 350</span>
+            </div>
         </div>
         <div class="writer">
             <span class="writer-name">Maro · 중곡동</span>

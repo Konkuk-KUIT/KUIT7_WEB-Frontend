@@ -16,6 +16,8 @@ body {
   align-items: center;
 }
 .info-header__title {
+  display: flex;
+  gap: 6px;
   justify-content: center;
   color: #000;
   font-family: Inter;
@@ -367,6 +369,7 @@ body {
   line-height: 18px;
 }
 .lost-content__title {
+  margin-right: 4px;
   color: #ff7e36;
   font-family: Inter;
   font-size: 14px;

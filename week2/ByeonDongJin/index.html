@@ -10,150 +10,259 @@
   <body>
     <!-- 상단 헤더 -->
     <header class="info-header">
-      <div class="info-header__title">나의 당근</div>
-      <div class="info-header__icon">
+      <div class="info-header__title">
+        군자동
+        <img src="assets/Expand Arrow.svg" alt="화살표 이미지" />
+      </div>
+      <div class="info-header__icons">
         <button>
-          <img src="assets/Settings.svg" alt="설정 버튼" />
+          <img src="assets/Search.svg" alt="돋보기 버튼" />
+        </button>
+        <button>
+          <img src="assets/Menu.svg" alt="메뉴 바 버튼" />
+        </button>
+        <button>
+          <img src="assets/Notification.svg" alt="알림 버튼" />
         </button>
       </div>
     </header>
-    <!-- 유저 정보 -->
-    <article class="user-info">
-      <section class="user-info__top">
-        <div class="user-info__profile">
-          <img src="assets/Frame 51.svg" alt="사용자 사진" class="user-img" />
-          <div class="user-info__content">
-            <span class="user-info__name">가나다</span>
-            <span class="user-info__address">군자동 #123456789</span>
-          </div>
-        </div>
-
-        <button>
-          <img src="assets/Forward.png" alt="화살표 버튼" />
-        </button>
-      </section>
-      <!---->
-      <section class="user-info__middle">
-        <div class="user-pay">
-          <span class="user-pay__title">당근페이</span>
-          <span class="user-pay__content"
-            >중고거래는 이제 당근페이로 해보세요!</span
+    <!-- 상단 메뉴 바 -->
+    <nav class="top-menu">
+      <div class="top-menu__content">동네소식</div>
+      <div class="top-menu__content">🙌같이해요</div>
+      <div class="top-menu__content">동네질문</div>
+      <div class="top-menu__content">동네맛집</div>
+      <div class="top-menu__content">취미생활</div>
+    </nav>
+    <article class="content">
+      <!-- 배너 -->
+      <section class="banner">
+        <img src="assets/Rectangle 2.svg" alt="장도연 사진" />
+        <div class="banner-content">
+          <span class="banner-content1"
+            >당근이웃과 함께하는 장도연의 동네생활!🥕</span
           >
+          <span class="banner-content2">가나다님 지금 바로 구경해보세요!</span>
+        </div>
+      </section>
+      <!-- 메인 메뉴1 -->
+      <section class="together">
+        <span class="together-type">🙌 같이해요</span>
+        <div class="together-main">
+          <div class="together-main__top">
+            <span class="together-main__state">모집중</span>
+            <span class="together-main__title">맥주마실 사람~~</span>
+          </div>
+          <span class="together-main__content">쪽지 주세요 고고!!</span>
+        </div>
+        <div class="together-info">
+          <div class="together-info__top">
+            <img src="assets/Chat Message.svg" alt="채팅 이모지" />
+            누구나 참여 가능
+          </div>
+          <div class="together-info__bot">
+            <img src="assets/User Account.svg" alt="유저 어카운트 이모지" />
+            2/4명 참여
+          </div>
+        </div>
+        <div class="together-user">
+          <div class="together-user__left">
+            <span class="together-user__name">요우우</span>
+            <span class="together-user__·">·</span>
+            <span class="together-user__add">화양동</span>
+          </div>
+          <div class="together-user__right">3분 전</div>
+        </div>
+      </section>
+      <!-- 메인 메뉴2 -->
+      <section class="question">
+        <div class="question-top">
+          <span class="question-type">동네질문</span>
+          <div class="question-content">
+            <span class="question-content__q">Q.</span>
+            혼밥은 다들 어디서 하시나요? 뻘쭘하지 않고 사장님들께 안 미안한 곳,
+            어디든 리스트업해서 한번씩 가보려구요. 부탁드립니다!
+          </div>
+          <span class="question-user">
+            <div class="question-user__left">
+              <span class="question-user__name">도우영</span>
+              <span class="question-user__·">·</span>
+              <span class="question-user__add">화양동</span>
+            </div>
+            <div class="question-user__right">15분 전</div>
+          </span>
+        </div>
+        <div class="question-bot">
+          <div class="question-bot__check">
+            <img src="assets/Ok.svg" alt="체크 이미지" />
+            궁금해요
+          </div>
+          <div class="question-bot__answer">
+            <img src="assets/Speech Bubble.svg" alt="말풍선 이미지" />
+            답변 2
+          </div>
+        </div>
+      </section>
+      <!-- 메인 메뉴3 -->
+      <section class="restaurant">
+        <div class="restaurant-top">
+          <span class="restaurant-type">동네맛집</span>
+          <div class="restaurant-content">
+            송정동 밥집 추천 부탁드려요 퇴근하고 뭐 해먹기 귀찮을때 먹을만한
+            곳이요.
+            <span class="restaurant-content__">
+              ...
+              <span class="restaurant-content__more">더보기</span>
+            </span>
+          </div>
+          <span class="restaurant-user">
+            <div class="restaurant-user__left">
+              <span class="restaurant-user__name">카리</span>
+              <span class="restaurant-user__·">·</span>
+              <span class="restaurant-user__add">화양동</span>
+            </div>
+            <div class="restaurant-user__right">17분 전</div>
+          </span>
+        </div>
+        <div class="restaurant-bot">
+          <div class="restaurant-bot__happy">
+            <img src="assets/Happy.svg" alt="웃음 이미지" />
+            공감하기
+          </div>
+          <div class="restaurant-bot__answer">
+            <img src="assets/Speech Bubble.svg" alt="말풍선 이미지" />
+            댓글 2
+          </div>
         </div>
       </section>
 
-      <section class="user-info__bottom">
-        <div class="user-history">
-          <div class="user-history__sales">
-            <div class="history-back">
-              <img
-                src="assets/Bill.svg"
-                alt="판매내역 사진"
-                class="history-img"
-              />
-            </div>
-            <span class="history-content">판매내역</span>
+      <!-- 메인 메뉴4 -->
+      <section class="lost">
+        <div class="lost-top">
+          <span class="lost-type">분실/실종센터</span>
+          <div class="lost-content">
+            <div class="lost-content__title">찾아요</div>
+            카드 지갑을 분실했습니다. 발견하시면 사례하겠습니다. 꼭 찾아주세요.
           </div>
-          <div class="user-history__purchase">
-            <div class="history-back">
-              <img
-                src="assets/Shopping.svg"
-                alt="구매내역 사진"
-                class="history-img"
-              />
-            </div>
-            <span class="history-content">구매내역</span>
+          <div class="lost-pic">
+            <img src="assets/Rectangle 2 (1).svg" alt="분실 이미지" />
+            <img src="assets/Rectangle 3.svg" alt="분실 이미지" />
           </div>
-          <div class="user-history__interest">
-            <div class="history-back">
+          <div class="lost-loc">
+            <div class="lost-loc__icon">
               <img
-                src="assets/heart.svg"
-                alt="관심목록 사진"
-                class="history-img"
+                src="assets/orange.PNG"
+                alt="주황 플레이스 마커"
+                class="orange"
               />
             </div>
-            <span class="history-content">관심목록</span>
+            <div class="lost-loc__content">
+              <span class="lost-loc__content-top">파리게이츠</span>
+              <span class="lost-loc__content-bot"
+                >서울특별시 광진구 동일로 350</span
+              >
+            </div>
+          </div>
+          <div class="lost-user">
+            <div class="lost-user__left">
+              <span class="lost-user__name">Maro</span>
+              <span class="lost-user__·">·</span>
+              <span class="lost-user__add">중곡동</span>
+            </div>
+            <div class="lost-user__right">1시간 전</div>
+          </div>
+        </div>
+
+        <div class="lost-bot">
+          <div class="lost-bot__happy">
+            <img src="assets/Happy.svg" alt="웃음 이미지" />
+            공감하기
+          </div>
+          <div class="lost-bot__answer">
+            <img src="assets/Speech Bubble.svg" alt="말풍선 이미지" />
+            댓글쓰기
           </div>
         </div>
       </section>
-    </article>
-    <!-- 나의 활동 -->
-    <article class="my-activity">
-      <section class="my-activity__title">나의 활동</section>
-      <section class="my-activity__content">
-        <img src="assets/News.svg" alt="뉴스 이미지" />
-        내 동네 설정
-      </section>
-      <section class="my-activity__content">
-        <img src="assets/News.svg" alt="뉴스 이미지" />
-        동네 인증하기
-      </section>
-      <section class="my-activity__content">
-        <img src="assets/News.svg" alt="뉴스 이미지" />
-        키워드 알림
-      </section>
-      <section class="my-activity__content">
-        <img src="assets/News.svg" alt="뉴스 이미지" />
-        모아보기
-      </section>
-      <section class="my-activity__content">
-        <img src="assets/News.svg" alt="뉴스 이미지" />
-        당근가계부
-      </section>
-    </article>
-    <!-- 우리 동네 -->
-    <article class="my-neighbor">
-      <section class="my-neighbor__title">우리동네</section>
-      <section class="my-neighbor__content">
-        <img src="assets/News.svg" alt="뉴스 이미지" />
-        동네생활 글/댓글
-      </section>
-      <section class="my-neighbor__content">
-        <img src="assets/News.svg" alt="뉴스 이미지" />
-        동네홍보 글
-      </section>
-      <section class="my-neighbor__content">
-        <img src="assets/News.svg" alt="뉴스 이미지" />
-        동네 가게 후기
-      </section>
-      <section class="my-neighbor__content">
-        <img src="assets/News.svg" alt="뉴스 이미지" />
-        저장한 장소
-      </section>
-      <section class="my-neighbor__content">
-        <img src="assets/News.svg" alt="뉴스 이미지" />
-        내 단골 가게
-      </section>
-      <section class="my-neighbor__content">
-        <img src="assets/News.svg" alt="뉴스 이미지" />
-        받은 쿠폰함
+
+      <!-- 메인 메뉴5 -->
+      <section class="lost">
+        <div class="lost-top">
+          <span class="lost-type">분실/실종센터</span>
+          <div class="lost-content">
+            <div class="lost-content__title">찾아요</div>
+            카드 지갑을 분실했습니다. 발견하시면 사례하겠습니다. 꼭 찾아주세요.
+          </div>
+          <div class="lost-pic">
+            <img src="assets/Rectangle 2 (1).svg" alt="분실 이미지" />
+            <img src="assets/Rectangle 3.svg" alt="분실 이미지" />
+          </div>
+          <div class="lost-loc">
+            <div class="lost-loc__icon">
+              <img
+                src="assets/orange.PNG"
+                alt="주황 플레이스 마커"
+                class="orange"
+              />
+            </div>
+            <div class="lost-loc__content">
+              <span class="lost-loc__content-top">파리게이츠</span>
+              <span class="lost-loc__content-bot"
+                >서울특별시 광진구 동일로 350</span
+              >
+            </div>
+          </div>
+          <div class="lost-user">
+            <div class="lost-user__left">
+              <span class="lost-user__name">Maro</span>
+              <span class="lost-user__·">·</span>
+              <span class="lost-user__add">중곡동</span>
+            </div>
+            <div class="lost-user__right">1시간 전</div>
+          </div>
+        </div>
+
+        <div class="lost-bot">
+          <div class="lost-bot__happy">
+            <img src="assets/Happy.svg" alt="웃음 이미지" />
+            공감하기
+          </div>
+          <div class="lost-bot__answer">
+            <img src="assets/Speech Bubble.svg" alt="말풍선 이미지" />
+            댓글쓰기
+          </div>
+        </div>
       </section>
     </article>
     <!-- 하단 바 -->
-    <footer class="menu">
-      <div class="menu-option">
-        <img src="assets/Home.svg" alt="집 이미지" class="menu-img" />
-        <span class="menu-content">홈</span>
+    <footer class="bot-menu">
+      <div class="bot-menu__option">
+        <img src="assets/Home.svg" alt="집 이미지" class="bot-menu__img" />
+        <span class="bot-menu__content">홈</span>
       </div>
-      <div class="menu-option">
-        <img src="assets/News.svg" alt="뉴스 이미지" class="menu-img" />
-        <span class="menu-content">동네생활</span>
-      </div>
-      <div class="menu-option">
+      <div class="bot-menu__option">
         <img
-          src="assets/Place Marker.png"
-          alt="플레이스 마커 이미지"
-          class="menu-img"
+          src="assets/News (2).svg"
+          alt="뉴스 이미지"
+          class="bot-menu__img"
         />
-        <span class="menu-content">내 근처</span>
+        <span class="bot-menu__content">동네생활</span>
       </div>
-      <div class="menu-option">
-        <img src="assets/Chat.png" alt="채팅 이미지" class="menu-img" />
-        <span class="menu-content">채팅</span>
+      <div class="bot-menu__option">
+        <img
+          src="assets/Place Marker.svg"
+          alt="플레이스 마커 이미지"
+          class="bot-menu__img"
+        />
+        <span class="bot-menu__content">내 근처</span>
       </div>
-      <div class="menu-option">
-        <img src="assets/User.png" alt="유저 이미지" class="menu-img" />
-        <span class="menu-content">나의 당근</span>
+      <div class="bot-menu__option">
+        <img src="assets/Chat.svg" alt="채팅 이미지" class="bot-menu__img" />
+        <span class="bot-menu__content">채팅</span>
+      </div>
+      <div class="bot-menu__option">
+        <img src="assets/User.svg" alt="유저 이미지" class="bot-menu__img" />
+        <span class="bot-menu__content">나의 당근</span>
       </div>
     </footer>
   </body>

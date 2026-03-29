@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./index.css" />
+</head>
+<body>
+    <!--상단 헤더-->
+    <header class="header">
+    <div class="header__title">
+        군자동
+        <button>
+          <img src="./assets/ExpandArrow.svg" alt="카메라 버튼" />
+        </button>
+    </div>
+      <div class="header__icons">
+        <button>
+          <img src="./assets/search.svg" alt="검색 버튼" />
+        </button>
+        <button>
+          <img src="./assets/menu.svg" alt="메뉴 버튼" />
+        </button>
+        <button>
+          <img src="./assets/notification.svg" alt="알람 버튼" />
+        </button>
+      </div>
+    </header>
+    <nav class="menu">
+        <button class="menu__item">
+            동네소식
+        </button>
+        <button class="menu__item">
+            🙌 같이해요
+        </button>
+        <button class="menu__item">
+            동네질문
+        </button>
+        <button class="menu__item">
+            동네맛집
+        </button>
+        <button class="menu__item">
+            취미생활
+        </button>
+    </nav>
+    <section class="banner">
+        <img
+        class="banner__img"
+        src="./assets/BannerImg.svg"
+        alt="배너 이미지"
+        />
+        <div class="banner__content">
+            <h1 class="banner__title">
+                당근이웃과 함께하는 장도연의 동네생활!🥕
+            </h1>
+            <p class="banner__text">
+                가나다님 지금 바로 구경해보세요!
+            </p>
+        </div>
+    </section>
+    <section class="main">
+    <article class="content">
+        <span class="category">🙌 같이해요</span>
+
+        <div class="main-title">
+            <div class="title">
+                <span class="title-orange">모집중</span>
+                <span class="title-black">맥주마실 사람~~</span>
+            </div>
+                <p class="main-subtitle">쪽지 주세요 고고!!</p>
+        </div>
+        
+        <div class="main-info">
+            <div class="main-info-item">
+            <img class="main-info-img" 
+            src="./assets/ChatMessage.svg" alt="챗 메세지 이미지">
+            <span class="main-info-text">
+                누구나 참여 가능
+            </span>
+            </div>
+            <div class="main-info-item">
+                <img class="main-info-img" 
+            src="./assets/UserAccount.svg" alt="사용자 이미지">
+            <span class="main-info-text">2/4명 참여</span>
+            </div>
+        </div>
+        <div class="main-meta">
+            <div class="left">
+            <span class="author">요우우</span>
+            <span>·</span>
+            <span class="location">화양동</span>
+            </div>
+            <span class="time">3분 전</span>
+        </div>
+    </article>
+
+    <article class="content">
+        <span class="category">동네질문</span>
+
+        <div class="title">
+                <span class="title-orange">Q.</span>
+                <span class="title-black">혼밥은 다들 어디서 하시나요? 뻘쭘하지 않고 사장님들께 
+                안 미안한 곳, 어디든 리스트업해서 한번씩 가보려구요. 
+                부탁드립니다!</span>
+        </div>
+        <div class="main-meta">
+            <div class="left">
+            <span class="author">도우영</span>
+            <span>·</span>
+            <span class="location">화양동</span>
+            </div>
+            <span class="time">15분 전</span>
+        </div>
+        
+    </article>
+    <div class="main-action">
+            <div class="action">
+                <img class="action-icon" src="./assets/Ok.svg" alt="궁금해요">
+                <span class="action-text">
+                    궁금해요
+                </span>
+            </div>
+            <div class="action">
+                <img class="action-icon" src="./assets/SpeechBubble.svg" alt="답변">
+                <span class="action-text">
+                    답변 2
+                </span>
+            </div>
+        </div>
+    <article class="content">
+        <span class="category">
+            동네맛집
+        </span>
+
+        <div class="main-title3">
+                송정동 밥집 추천 부탁드려요
+                퇴근하고 뭐 해먹기 귀찮을때 먹을만한 곳이요.
+            <div class="main-num3-subtitle">
+                ... 더보기
+            </div>
+        </div>
+        <div class="main-meta">
+            <div class="left">
+            <span class="author">
+                카리
+            </span>
+            <span>·</span>
+            <span class="location">화양동</span>
+            </div>
+            <span class="time">
+                17분 전
+            </span>
+        </div>
+        
+    </article>
+    <div class="main-action">
+            <div class="action">
+                <img class="action-icon" src="./assets/Happy.svg" alt="공감하기">
+                <span class="action-text">
+                    공감하기
+                </span>
+            </div>
+            <div class="action">
+                <img class="action-icon" src="./assets/SpeechBubble.svg" alt="댓글">
+                <span class="action-text">
+                    댓글 2
+                </span>
+            </div>
+        </div>
+    <article class="content">
+        <span class="category">
+            분실/실종센터
+        </span>
+
+        <div class="title">
+            <span class="title-orange">찾아요</span>
+            <span class="title-black">카드 지갑을 분실했습니다. 
+            발견하시면 사례하겠습니다. 꼭 찾아주세요.</span>
+        </div>
+        <div class="wallet-img">
+            <img src="./assets/wallet1.svg" alt="지갑1">
+            <img src="./assets/wallet2.svg" alt="지갑2">
+        </div>
+        <div class="location__box">
+            <div class="location__map">
+                
+                    <img class="map__background" src="./assets/Map1.svg" alt="지도배경1">
+                    <img class="map__background" src="./assets/Map2.svg" alt="지도배경2">
+                    <img class="map__background" src="./assets/Map3.svg" alt="지도배경3">
+                    <img class="map__background" src="./assets/Map4.svg" alt="지도배경4">
+            <img class="location__icon" src="./assets/MapMarker.svg" alt="지도 마크">
+            </div>
+            <div class="location__info">
+                <div class="location__name">
+                    파리게이츠
+                </div>
+                <div class="location__address">
+                    서울특별시 광진구 동일로 350
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-meta">
+            <div class="left">
+            <span class="author">
+                Maro
+            </span>
+            <span>·</span>
+            <span class="location">중곡동</span>
+            </div>
+            <span class="time">
+                1시간 전
+            </span>
+            
+        </div>
+        
+    </article>
+    <div class="main-action">
+            <div class="action">
+                <img class="action-icon" src="./assets/Happy.svg" alt="공감하기">
+                <span class="action-text">
+                    공감하기
+                </span>
+            </div>
+            <div class="action">
+                <img class="action-icon" src="./assets/SpeechBubble.svg" alt="댓글">
+                <span class="action-text">
+                    댓글쓰기
+                </span>
+            </div>
+        </div>
+    <article class="content">
+        <span class="category">
+            분실/실종센터
+        </span>
+        <div class="title">
+            <span class="title-orange">찾아요</span>
+            <span class="title-black">카드 지갑을 분실했습니다. 
+            발견하시면 사례하겠습니다. 꼭 찾아주세요.</span>
+        </div>
+        
+    </article>
+    </section>
+
+    <img class="plus__btn" src="./assets/Plus.svg" alt="플러스버튼">
+
+    <nav class="bottom-bar">
+        <div class="bottom-bar-item">
+            <img class="bottom-bar-item-icon"
+            src="./assets/Home.svg"
+            alt="홈">
+            <div class="bottom-bar-item-text">홈</div>
+        </div>
+        <div class="bottom-bar-item">
+            <img class="bottom-bar-item-icon"
+            src="./assets/News.svg"
+            alt="news">
+            <div class="bottom-bar-item-text">동네생활</div>
+        </div>
+        <div class="bottom-bar-item">
+            <img class="bottom-bar-item-icon"
+            src="./assets/PlaceMarker.svg"
+            alt="홈">
+            <div class="bottom-bar-item-text">내 근처</div>
+        </div>
+        <div class="bottom-bar-item">
+            <img class="bottom-bar-item-icon"
+            src="./assets/Chat.svg"
+            alt="홈">
+            <div class="bottom-bar-item-text">채팅</div>
+        </div>
+        <div class="bottom-bar-item">
+            <img class="bottom-bar-item-icon"
+            src="./assets/User.svg"
+            alt="홈">
+            <div class="bottom-bar-item-text">나의 당근</div>
+        </div>
+    </nav>
+    <footer>
+        <img class="home__indicator" src="./assets/HomeIndicator.svg" alt="홈">
+    </footer>
+</body>
+</html>

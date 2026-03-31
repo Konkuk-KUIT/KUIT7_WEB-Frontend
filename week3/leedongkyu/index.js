@@ -77,7 +77,9 @@ function render() {
 
       li.appendChild(editInput);
 
-      editInput.focus();
+      setTimeout(() => {
+        editInput.focus();
+      }, 0);
     } else {
       const span = document.createElement("span");
       span.textContent = todo.text;

@@ -47,7 +47,7 @@ function render() {
     const editBtn = document.createElement("button");
     editBtn.className = "editBtn";
     editBtn.textContent = "수정";
-    editBtn.onclick = () => updateTodo(todo, li, span, editBtn);
+    editBtn.onclick = () => updateTodo(todo, li);
 
     const delBtn = document.createElement("button");
     delBtn.textContent = "삭제";
@@ -72,7 +72,7 @@ function updateTodo(todo, li) {
     span.textContent = editInput.value.trim();
     todo.text = editInput.value.trim();
     li.replaceChild(span, editInput);
-    editBtn.onclick = () => updateTodo(todo, li, span, editBtn);
+    editBtn.onclick = () => updateTodo(todo, li);
   }
   editInput.addEventListener("keydown", (e) => {
     if (e.key == "Enter") {

@@ -1,5 +1,3 @@
-import "./reset.css";
-
 const Header = () => {};
 
 const Content = () => {};

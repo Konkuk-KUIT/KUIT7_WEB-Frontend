@@ -46,14 +46,14 @@ function render() {
     span.onclick = () => toggleDone(todo.id);
 
     const delBtn = document.createElement("button");
-    delBtn.className = "delBtn"
+    delBtn.className = "delBtn";
     delBtn.textContent = "삭제";
     delBtn.onclick = () => deleteTodo(todo.id);
 
     const edBtn = document.createElement("button");
     edBtn.className = "edBtn";
     edBtn.textContent = "수정";
-    edBtn.onclick = () => updateTodo(todo.id);
+    edBtn.onclick = () => updateTodo(todo.id, span);
 
     li.appendChild(span);
 
@@ -65,11 +65,30 @@ function render() {
   });
 }
 
-function updateTodo(id) {
+function updateTodo(id, span) {
   // 수정 : 프롬프트 띄워서 새 값 받고 해당 tod에 반영하고...
   // 이번에는 수정 버튼을 하나 만들어라 -> 수정 버튼 누르면 span이 input 창으로 바뀌고 거기서 수정하면 반영되는 코드로
   // html 수정해서 수정 버튼 만들면 매우 굿,,,
-  const todo = document.getElementById(id);
-  todo.span = document.createElement("text");
-  render();
+  const curText = span.textContent;
+  const editInput = document.createElement("input");
+  editInput.type = "text";
+  editInput.value = curText;
+  editInput.className = "edit-input";
+
+  span.parentNode.insertBefore(editInput, span);
+  span.remove();
+
+  editInput.addEventListener("keydown", (e) => {
+    if(e.key ==="Enter") {
+      const newText = editInput.value.trim();
+      if(!newText) return;
+      todos = todos.map((todo) => {
+        return todo.id === id ? { ...todo, text: newText} : todo;
+      });
+      render();
+    }
+  });
+  editInput.addEventListener("blur", () => {
+    render();
+  });
 }

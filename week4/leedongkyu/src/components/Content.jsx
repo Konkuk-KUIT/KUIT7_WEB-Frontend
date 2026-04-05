@@ -6,7 +6,8 @@ export default function Content() {
     <main className="content">
       <section className="item-list">
         {marketModel.items.map((item) => (
-          <ItemCard key={item.id} item={item} />
+          item.isSold ? <ItemCard key={item.id} item={item} /> : null
+        //   <ItemCard key={item.id} item={item} />
         ))}
       </section>
     </main>

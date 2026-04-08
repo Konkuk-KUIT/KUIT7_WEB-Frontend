@@ -1,0 +1,138 @@
+.main-page {
+    margin-bottom: 45px;
+    margin-top: 53px;
+}
+button {
+    background: none;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+}
+.header-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #d9d9d9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+}
+.location {
+    display: flex;
+    gap: 6px;
+
+    color: #000;
+
+    /* 18 */
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px; /* 155.556% */
+}
+
+.right-btn {
+    gap: 16px;
+    display: flex;
+    align-items: center;
+}
+.box {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+}
+.item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #EEE;
+}
+
+.item-img {
+    border-radius: 4px;
+}
+
+.item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+
+.item-title {
+    color: #000;
+
+/* 16 */
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px; /* 125% */
+}
+.item-meta{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    color: #8C8C8C;
+    /* 12 */
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 133.333% */
+}
+.item-price {
+    color: #FF7E36;
+font-family: Inter;
+font-size: 15px;
+font-style: normal;
+font-weight: 700;
+line-height: 22px; /* 146.667% */
+}
+.item-react {
+    display: flex;
+    gap: 4px;
+    justify-content: flex-end;
+}
+.item-react-btn {
+    display: flex;
+    align-items: center;
+}
+.bottom-bar {
+    padding: 8px 0;
+    position: fixed;
+    bottom: 0;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    width: 100%;
+    border-top: 1px solid #d9d9d9;
+
+}
+.bottom-btn {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+.bimg {
+    width: 24px;
+    height: 24px;
+    display: block;
+    object-fit: contain;
+}
+
+.plus-btn {
+    position: fixed;
+    bottom: 55px;
+    right: 0px;
+}

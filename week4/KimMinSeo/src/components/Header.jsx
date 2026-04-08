@@ -1,8 +1,4 @@
-import marketModel from "../model.js/marketModel";
-
-const Header = () => {
-  const { location } = marketModel;
-
+const Header = ({ location }) => {
   return (
     <header className="header">
       <div className="header-left">

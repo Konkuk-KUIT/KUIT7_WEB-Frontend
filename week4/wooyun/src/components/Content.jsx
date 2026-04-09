@@ -11,7 +11,7 @@ const Content = ({
     <article className="item-list">
       <section className="item-post">
         <div className="item-image">
-          <img src={image} alt={title} className="item-imagebox"/>
+          <img src={image} alt={title} className="item-imagebox"/>  {/*비구조화 할당 사용*/}
         </div>
         <div className="item-info">
           <div className="item-infobox">

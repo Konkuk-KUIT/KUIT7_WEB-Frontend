@@ -1,0 +1,17 @@
+/* 카테고리 네비 (가로 스크롤) */
+.category-nav {
+    display: flex; 
+    gap: 8px; 
+    padding: 12px 16px;
+
+    /* 줄바꿈없이 양옆으로 스크롤 가능하게 */
+    overflow-x: auto; 
+    white-space: nowrap; 
+}
+
+.category-nav::-webkit-scrollbar { display: none; }
+/* 이부분이 있어서 양옆으로 스크롤해도 안예쁜게 안보임 */
+
+.category-btn {
+    padding: 6px 12px; border: 1px solid #eee; border-radius: 20px; font-size: 13px;
+}

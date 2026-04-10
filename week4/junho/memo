@@ -1,0 +1,16 @@
+
+
+src/
+ ├── components/
+ │    ├── BottomNav/     
+ │    │    ├── BottomNav.jsx
+ │    │    └── BottomNav.css
+ │    ├── CategoryBtn/   
+ │    │    ├── CategoryBtn.jsx
+ │    │    └── CategoryBtn.css
+ │    └── Header/        
+ │    │    ├── Header.jsx
+ │    │    └── Header.css
+ ├── App.jsx
+ ├── index.css
+ └── main.jsx

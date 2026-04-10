@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    position: sticky; top: 0; background: #fff; z-index: 100;
+}
+
+.header__location { 
+    font-size: 18px; 
+    font-weight: bold; 
+    display: flex; 
+    align-items: center; 
+    gap: 4px;
+    position: relative;
+}
+
+.header__icons { 
+    display: flex; 
+    gap: 16px; 
+    position: relative;
+}

@@ -1,11 +1,13 @@
 import ProductCard from './ProductCard';
 
-const Content = () => {
+const Content = ({ items }) => {
   return (
     <article className="product">
-      {marketModel.items.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
+      {items
+        .filter((item) => item.isSold === true)
+        .map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
     </article>
   );
 };

@@ -1,36 +1,35 @@
-import marketModel from "../model.js/marketModel";
-
-const Content = () => {
+const Content = ({items}) => {
   return (
     <div className="content-list">
-      {marketModel.items.map((item) => (
-        <div key={item.id} className="item">
-          <div className="item-img">
-            <img src={item.image} alt="아이템 이미지"  />
-          </div>
-          <div className="content-info"> 
-            <div className="item-title">{item.title}</div>
-            <div className="item-detail">
-              {item.location} · {item.timeAgo}
+      {items.map(({ id, title, location, timeAgo, price, image, comments, likes, isSold }) => (
+        isSold && (
+          <div key={id} className="item">
+            <div className="item-img">
+              <img src={image} alt="아이템 이미지"  />
             </div>
-            <div className="item-price">{item.price}</div>
-          </div>
-          <div className="item-reaction">
-            {item.comments > 0 && (
-              <div>
-                <img src="./assets/chat.svg" alt="댓글" className="reaction-icon" />
-                {item.comments}
-              </div> 
-            )}
-            {item.likes > 0 && (
-              <div>
-                <img src="./assets/chat.svg" alt="좋아요" className="reaction-icon" />
-                {item.likes}
+            <div className="content-info"> 
+              <div className="item-title">{title}</div>
+              <div className="item-detail">
+                {location} · {timeAgo}
               </div>
-            )}
+              <div className="item-price">{price}</div>
+            </div>
+            <div className="item-reaction">
+              {comments > 0 && (
+                <div>
+                  <img src="./assets/chat.svg" alt="댓글" className="reaction-icon" />
+                  {comments}
+                </div> 
+              )}
+              {likes > 0 && (
+                <div>
+                  <img src="./assets/chat.svg" alt="좋아요" className="reaction-icon" />
+                  {likes}
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-      ))}
+      )))}
     </div>
   )
 }

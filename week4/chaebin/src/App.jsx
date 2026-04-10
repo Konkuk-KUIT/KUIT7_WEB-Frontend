@@ -1,14 +1,16 @@
 import React from 'react'
 import './App.css'
+import marketModel from "./model.js/marketModel"
 import Header from "./components/Header"
 import Content from "./components/Content"
 import Plus from "./components/Plus"
 import Tab from "./components/Tab"
 
 function App() {
-  return (<div className="App">
+  return (
+  <div className="App">
       <Header />
-      <Content />
+      <Content items={marketModel.items} />
       <Plus />
       <Tab />
     </div>

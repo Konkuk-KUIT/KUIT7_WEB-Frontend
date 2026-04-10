@@ -66,12 +66,6 @@ main{
     height: 14px;
 }
 
-.header-icons{
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-}
-
 .header-icon{
     width: 24px;
     height: 24px;

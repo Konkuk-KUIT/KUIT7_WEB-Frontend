@@ -1,0 +1,41 @@
+/* ProductCard.css */
+
+.product-card {
+  display: flex;
+  align-items: center; 
+  gap: 16px; /* 당근마켓은 보통 16px 정도를 선호해! */
+  padding: 16px; /* 여백을 조금 더 주면 훨씬 시원해 보여 */
+  border-bottom: 1px solid #eee;
+}
+
+.product-card img {
+  width: 108px;
+  height: 108px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.product-card > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.product-card h3 {
+  font-size: 16px;
+  margin: 0;
+  color: #212529;
+}
+
+.product-card p {
+  font-size: 13px;
+  color: #8e949c;
+  margin: 0;
+}
+
+.product-card strong {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fd8802;
+}

@@ -1,4 +1,4 @@
-import Plus from './assets/plus.svg';
+import Plus from '../assets/plus.svg';
 
 const PlusButton = () => {
   return (

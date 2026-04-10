@@ -1,8 +1,8 @@
-import Home from './assets/home.svg';
-import News from './assets/news.svg';
-import PlaceMarker from './assets/placeMarker.svg';
-import ChatBottom from './assets/chatBottom.svg';
-import User from './assets/user.svg';
+import Home from '../assets/home.svg';
+import News from '../assets/news.svg';
+import PlaceMarker from '../assets/placeMarker.svg';
+import ChatBottom from '../assets/chatBottom.svg';
+import User from '../assets/user.svg';
 
 const navItems = [
   { id: 1, icon: Home, label: "홈" },

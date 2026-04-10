@@ -1,13 +1,13 @@
-import ExpandArrow from './assets/expandArrow.svg';
-import Search from './assets/search.svg';
-import Menu from './assets/menu.svg';
-import Notification from './assets/notification.svg';
+import ExpandArrow from '../assets/expandArrow.svg';
+import Search from '../assets/search.svg';
+import Menu from '../assets/menu.svg';
+import Notification from '../assets/notification.svg';
 
-const Header = () => {
+const Header = ({ location }) => {
   return(
      <header className="header">
     <div className="headerTitle">
-        <div className="headerText">군자동</div>
+        <div className="headerText">{location}</div>
         <button>
           <img src={ExpandArrow} alt="화살표 버튼" />
         </button>

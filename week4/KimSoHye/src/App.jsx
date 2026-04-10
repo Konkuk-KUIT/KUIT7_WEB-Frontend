@@ -91,6 +91,15 @@ const BottomNav = () => {
     </nav>
     );
 };
+
+const PlusButton = () => {
+  return (
+    <button className="plusButton">
+      <img src={Plus} alt="추가 버튼" />
+    </button>
+  );
+};
+
 const Main = () => {
   return(
     <>
@@ -99,8 +108,8 @@ const Main = () => {
         <Section key={item.id} item={item} />
       ))}
       <BottomNav/>
+      <PlusButton/>
     </main>
-    
     </>
   );
 };
@@ -109,9 +118,7 @@ function App() {
     <>
     <Header></Header>
     <Main/>
-    
     </>
-
   )
 }
 

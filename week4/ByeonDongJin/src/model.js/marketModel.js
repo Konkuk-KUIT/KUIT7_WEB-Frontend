@@ -10,6 +10,7 @@ const marketModel = {
       comments: 3,
       likes: 11,
       isSold: true,
+      id: 0,
     },
     {
       title: "바이레도 블랑쉬 50ml",
@@ -20,6 +21,7 @@ const marketModel = {
       comments: 0,
       likes: 2,
       isSold: true,
+      id: 1,
     },
     {
       title: "샌드위치",
@@ -30,6 +32,7 @@ const marketModel = {
       comments: 0,
       likes: 0,
       isSold: true,
+      id: 2,
     },
     {
       title: "아이폰 13프로맥스",
@@ -40,6 +43,7 @@ const marketModel = {
       comments: 0,
       likes: 0,
       isSold: true,
+      id: 3,
     },
     {
       title: "커피머신",
@@ -50,6 +54,7 @@ const marketModel = {
       comments: 0,
       likes: 0,
       isSold: true,
+      id: 4,
     },
     {
       title: "컴퓨터 구조론",
@@ -60,6 +65,7 @@ const marketModel = {
       comments: 0,
       likes: 0,
       isSold: false,
+      id: 5,
     },
     {
       title: "맥북 에어 m1 13인치",
@@ -70,6 +76,7 @@ const marketModel = {
       comments: 4,
       likes: 12,
       isSold: false,
+      id: 6,
     },
   ],
 };

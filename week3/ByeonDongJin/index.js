@@ -51,7 +51,7 @@ function render() {
 
     const delBtn = document.createElement("button");
     delBtn.textContent = "삭제";
-    delBtn.onclick = () => deleteTodo(todo.id);
+    delBtn.onclick = () => deleteTodo(todo.id); //삭제 , 토글도 todo를 매개변수로 넣어서 가능한가
 
     li.appendChild(span);
     li.appendChild(editBtn);
@@ -61,7 +61,6 @@ function render() {
 }
 
 function updateTodo(todo, li) {
-  //todo.id , span으로 바꾸기
   const editInput = document.createElement("input");
   const span = li.querySelector("span");
   const editBtn = li.querySelector(".editBtn");
@@ -69,6 +68,7 @@ function updateTodo(todo, li) {
   li.replaceChild(editInput, span);
 
   function saveEdit() {
+    // 수정된 text로 ui, data 수정하고 , 다시 span으로 replace / editBtn의 onclick 다시 변경하기
     span.textContent = editInput.value.trim();
     todo.text = editInput.value.trim();
     li.replaceChild(span, editInput);

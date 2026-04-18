@@ -204,9 +204,9 @@ body {
 
 .bottom-plus {
   display: flex;
-  position: fixed;
+  position: absolute;
   padding: 12px;
-  right: 30px;
+  right: 16px;
   bottom: 80px;
   border-radius: 100px;
   background: #ff7e36;

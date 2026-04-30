@@ -58,6 +58,14 @@ export function FilterableProductTable() {
     );
   };
 
+  const handleEditingProduct = (productId, newname) => {
+    setnewproducts((prevProducts) =>
+      prevProducts.map((product) =>
+        product.id === productId ? { ...product, name: newname } : product,
+      ),
+    );
+  };
+
   const filteredProducts = newproducts.filter((product) => {
     const lowerCaseProductName = product.name.toLowerCase();
     const lowerCaseFilterText = filterText.toLowerCase();
@@ -79,6 +87,7 @@ export function FilterableProductTable() {
       <ProductTable
         products={filteredProducts}
         onDeleteProduct={handleDeleteProduct}
+        onEditingProduct={handleEditingProduct}
       />
     </>
   );

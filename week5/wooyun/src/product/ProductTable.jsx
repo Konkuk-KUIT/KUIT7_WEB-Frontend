@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ProductCategoryRow from "./ProductCategoryRow";
 import ProductRow from "./ProductRow";
 
-export default function ProductTable({ products, onDeleteProduct }) {
+export default function ProductTable({ products, onDeleteProduct, onEditingProduct, }) {
   const productTableByCategory = Object.groupBy(
     products,
     ({ category }) => category,
@@ -27,6 +27,7 @@ export default function ProductTable({ products, onDeleteProduct }) {
                 key={product.id}
                 {...product}
                 onDeleteProduct={onDeleteProduct}
+                onEditingProduct={onEditingProduct}
               />
             ))}
           </React.Fragment>

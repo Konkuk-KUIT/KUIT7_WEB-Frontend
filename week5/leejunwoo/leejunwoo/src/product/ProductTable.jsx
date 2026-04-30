@@ -1,6 +1,6 @@
 import React from "react";
 import ProductCategoryRow from "./ProductCategoryRow";
-import { ProductRowList } from "./ProductRow";
+import ProductRow from "./ProductRow";
 
 function getProductsByCategory(products) {
   const productsByCategory = Object.groupBy(
@@ -12,32 +12,27 @@ function getProductsByCategory(products) {
 }
 
 export default function ProductTable({
-  products,
-  onProductEdit,
-  onProductDelete,
-}) {
-  const productsByCategory = getProductsByCategory(products);
+  products}) {
+    const productsByCategory = Object.entries(getProductsByCategory(products));
 
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        {Object.entries(productsByCategory).map(([category, products]) => (
-          <React.Fragment key={category}>
-            <ProductCategoryRow category={category} />
-            <ProductRowList
-              products={products}
-              onEdit={onProductEdit}
-              onDelete={onProductDelete}
-            />
-          </React.Fragment>
-        ))}
-      </tbody>
-    </table>
-  );
+    return (
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {productsByCategory.map(([category, products]) => (
+            <React.Fragment key={category}>
+              <ProductCategoryRow category={category}/>
+              {products.map((product) => (
+                <ProductRow key={product.name} {...product}/>
+              ))}
+            </React.Fragment>
+          ))}
+        </tbody>
+      </table>
+    );
 }

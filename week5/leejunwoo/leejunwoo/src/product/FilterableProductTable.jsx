@@ -9,8 +9,14 @@ export function FilterableProductTable() {
   const [filterText, setFilterText] = useState("");
   const [inStockOnly, setInStockOnly] = useState(false);
   // const [inStockOnly, toggleInStockOnly] = useToggle(false); // 맥락을 잘 드러낼 수가 있음.
+  const [products, setProducts] = useState(INITIAL_PRODUCT_LIST);
+  const handleDeleteProduct = (targetName) => {
+    setProducts((prevProducts) => (
+      prevProducts.filter((product) => product.name !== targetName)
+    ));
+  }
 
-  const filteredProducts = INITIAL_PRODUCT_LIST.filter((product) => {
+  const filteredProducts = products.filter((product) => {
     const lowerCaseProductName = product.name.toLowerCase();
     const lowerCaseFilterText = filterText.toLowerCase();
     const hasPassedStockFilter = 
@@ -27,7 +33,10 @@ export function FilterableProductTable() {
         inStockOnly={inStockOnly}
         onInStockOnlyChange={setInStockOnly}
       />
-      <ProductTable products={filteredProducts}/>
+      <ProductTable 
+        products={filteredProducts}
+        onDelete={handleDeleteProduct}
+      />
     </>
   );
 }

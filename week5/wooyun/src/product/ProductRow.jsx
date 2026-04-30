@@ -6,6 +6,12 @@ export default function ProductRow({ id, name, price, onDeleteProduct, onEditing
     const [editedname, seteditedname] = useState("");
     
     const handleEditclick = () => {
+        if(isEditing) {
+            onEditingProduct(id, editedname);
+            setisEditing(false);
+            return;
+        }
+        
         seteditedname("");
         setisEditing(true);
     }
@@ -42,7 +48,6 @@ export default function ProductRow({ id, name, price, onDeleteProduct, onEditing
         <button onClick={handleEditclick}>수정</button>
         <button onClick={() => onDeleteProduct(id)}>삭제</button>
       </td>
-      
     </tr>
   );
 }

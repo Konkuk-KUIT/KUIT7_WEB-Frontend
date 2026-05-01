@@ -14,7 +14,8 @@ function getProductsByCategory(products) {
 
 export default function ProductTable({
   products,
-  onDelete
+  onDelete,
+  onEdit
 }) {
     const productsByCategory = Object.entries(getProductsByCategory(products));
     return (
@@ -34,6 +35,7 @@ export default function ProductTable({
                   key={product.name}
                   {...product}
                   onDelete={onDelete}
+                  onEdit={onEdit}
                   />
               ))}
             </React.Fragment>

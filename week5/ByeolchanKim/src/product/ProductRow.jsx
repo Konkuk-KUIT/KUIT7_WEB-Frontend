@@ -6,9 +6,9 @@ export function ProductRowList({ products, ...props }) {
   ));
 }
 
-export default function ProductRow({ name, price, onEdit, onDelete }) {
+export default function ProductRow({ id, name, price, onEdit, onDelete }) {
   const [isEditing, setIsEditing] = useState(false);
-  const [product, setProduct] = useState({ name, price });
+  const [product, setProduct] = useState({ id, name, price });
   // 실습:
   //   필수: onEditProduct를 통해 상품 정보 수정
   //   선택: onDeleteProduct를 통해 상품 삭제
@@ -19,12 +19,12 @@ export default function ProductRow({ name, price, onEdit, onDelete }) {
   };
 
   const handleButtonSave = () => {
-    onEdit(name, product);
+    onEdit(id, product);
     setIsEditing(false);
   };
 
   const handleButtonDelete = () => {
-    onDelete(name);
+    onDelete(id);
     setIsEditing(false);
   };
 

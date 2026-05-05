@@ -4,18 +4,18 @@ import { INITIAL_PRODUCT_LIST } from "../constants/product";
 export function useProducts() {
   const [products, setProducts] = useState(INITIAL_PRODUCT_LIST);
 
-  const edit = (targetName, newProduct) => {
+  const edit = (id, newProduct) => {
     setProducts((prevProducts) =>
       prevProducts.map((prevProduct) => ({
         ...prevProduct,
-        ...(prevProduct.name === targetName ? newProduct : {}),
+        ...(prevProduct.id === id ? newProduct : {}),
       }))
     );
   };
 
-  const remove = (targetName) => {
+  const remove = (id) => {
     setProducts((prevProducts) =>
-      prevProducts.filter((prevProduct) => prevProduct.name !== targetName)
+      prevProducts.filter((prevProduct) => prevProduct.id !== id)
     );
   };
 

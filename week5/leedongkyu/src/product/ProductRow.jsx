@@ -2,25 +2,25 @@ import { useState } from "react";
 
 export function ProductRowList({ products, ...props }) {
   return products.map((product) => (
-    <ProductRow key={product.name} {...product} {...props} />
+    <ProductRow key={product.id} {...product} {...props} />
   ));
 }
 
-export default function ProductRow({ name, price, category, stocked, onEdit, onDelete }) {
+export default function ProductRow({ id, name, price, category, stocked, onEdit, onDelete }) {
   const [isEditing, setIsEditing] = useState(false);
-  const [product, setProduct] = useState({ name, price, category, stocked });
+  const [product, setProduct] = useState({ id, name, price, category, stocked });
 
   const handleButtonEdit = () => {
     setIsEditing(true);
   };
 
   const handleButtonSave = () => {
-    onEdit(name, product);
+    onEdit(id, product);
     setIsEditing(false);
   };
 
   const handleButtonDelete = () => {
-    onDelete(name);
+    onDelete(id);
     setIsEditing(false);
   };
 

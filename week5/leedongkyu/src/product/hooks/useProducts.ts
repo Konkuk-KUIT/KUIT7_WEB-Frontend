@@ -11,18 +11,18 @@ type Product = {
 export function useProducts() {
   const [products, setProducts] = useState(INITIAL_PRODUCT_LIST);
 
-  const edit = (targetName: string, newProduct: Product) => {
+  const edit = (targetId: number, newProduct: Product) => {
     setProducts((prevProducts) =>
       prevProducts.map((prevProduct) => ({
         ...prevProduct,
-        ...(prevProduct.name === targetName ? newProduct : {}),
+        ...(prevProduct.id === targetId ? newProduct : {}),
       }))
     );
   };
 
-  const remove = (targetName: string) => {
+  const remove = (targetId: number) => {
     setProducts((prevProducts) =>
-      prevProducts.filter((prevProduct) => prevProduct.name !== targetName)
+      prevProducts.filter((prevProduct) => prevProduct.id !== targetId)
     );
   };
 

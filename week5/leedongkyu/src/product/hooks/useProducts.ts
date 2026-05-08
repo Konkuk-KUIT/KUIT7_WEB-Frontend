@@ -1,21 +1,28 @@
 import { useState } from "react";
 import { INITIAL_PRODUCT_LIST } from "../constants/product";
 
+type Product = {
+  category: string;
+  price: string;
+  stocked: boolean;
+  name: string;
+};
+
 export function useProducts() {
   const [products, setProducts] = useState(INITIAL_PRODUCT_LIST);
 
-  const edit = (id, newProduct) => {
+  const edit = (targetId: number, newProduct: Product) => {
     setProducts((prevProducts) =>
       prevProducts.map((prevProduct) => ({
         ...prevProduct,
-        ...(prevProduct.id === id ? newProduct : {}),
+        ...(prevProduct.id === targetId ? newProduct : {}),
       }))
     );
   };
 
-  const remove = (id) => {
+  const remove = (targetId: number) => {
     setProducts((prevProducts) =>
-      prevProducts.filter((prevProduct) => prevProduct.id !== id)
+      prevProducts.filter((prevProduct) => prevProduct.id !== targetId)
     );
   };
 

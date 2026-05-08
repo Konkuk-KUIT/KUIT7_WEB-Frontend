@@ -1,18 +1,21 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { type Product } from "./hooks/useProducts";
 
-export function ProductRowList({ products, ...props }) {
+interface ProductRowProps {
+  products: Product[];
+  onEdit: (id: number, product: Product) => void;
+  onDelete: (id: number) => void;
+}
+
+export function ProductRowList({ products, ...props }: ProductRowProps) {
   return products.map((product) => (
-    <ProductRow key={product.name} {...product} {...props} />
+    <ProductRow key={product.id} {...product} {...props} />
   ));
 }
 
-export default function ProductRow({ id, name, price, onEdit, onDelete }) {
+export default function ProductRow({ id, name, price, category, stocked, onEdit, onDelete } : Product & Omit<ProductRowProps, "products">) {
   const [isEditing, setIsEditing] = useState(false);
-  const [product, setProduct] = useState({ id, name, price });
-  // 실습:
-  //   필수: onEditProduct를 통해 상품 정보 수정
-  //   선택: onDeleteProduct를 통해 상품 삭제
-  //   리팩토링까지 할 수 있으면 좋을 듯
+  const [product, setProduct] = useState({ id, name, price, category, stocked });
 
   const handleButtonEdit = () => {
     setIsEditing(true);
@@ -48,6 +51,27 @@ export default function ProductRow({ id, name, price, onEdit, onDelete }) {
               setProduct((prev) => ({ ...prev, price: event.target.value }))
             }
           />
+        </td>
+        <td>
+          <input
+            type="text"
+            value={product.category}
+            onChange={(event) =>
+              setProduct((prev) => ({ ...prev, category: event.target.value }))
+            }
+          />
+        </td>
+        <td>
+          <label>
+            <input
+              type="checkbox"
+              checked={product.stocked}
+              onChange={(event) =>
+                setProduct((prev) => ({ ...prev, stocked: event.target.checked }))
+              }
+            />
+            In Stock
+          </label>
         </td>
         <td>
           <button type="button" onClick={handleButtonSave}>

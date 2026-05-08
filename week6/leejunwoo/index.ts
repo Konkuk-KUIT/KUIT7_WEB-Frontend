@@ -1,0 +1,110 @@
+type Todo = {
+  id: number;
+  text: string;
+  done: boolean;
+}
+
+let todos: Todo[] = [];
+
+function getElement<T extends HTMLElement>(id: string): T {
+  const element = document.getElementById(id);
+  if(element === null) {
+    throw new Error(`${id} 요소가 없음`);
+  }
+  return element as T
+}
+
+const form = getElement<HTMLFormElement>("todo-form");
+const input = getElement<HTMLInputElement>("todo-input");
+const list = getElement<HTMLUListElement>("todo-list");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const text = input.value.trim();
+  if (text) {
+    const newTodo = {
+      id: Date.now(),
+      text,
+      done: false,
+    };
+    todos.push(newTodo);
+    render();
+  }
+});
+
+function deleteTodo(id: number): void {
+  // 해당 id의 todo를 찾아 없애거나 아니면 새롭게 만들거나 -> render 호출
+  todos = todos.filter(todo => todo.id !== id);
+  render();
+}
+
+function toggleDone(id: number): void {
+  // 완료 기능 -> Todo.Done을 true, false 전환 -> render 호출
+  todos.forEach(todo => {
+    if(todo.id === id) {
+      todo.done ? todo.done = false : todo.done=true;
+      render();
+    }
+  });
+}
+
+function render(): void{
+  list.innerHTML = ""; // 기존 내용 지우기
+  todos.forEach((todo) => {
+    const li = document.createElement("li");
+    li.className = todo.done ? "done" : "";
+
+    const span = document.createElement("span");
+    span.textContent = todo.text;
+    span.style.cursor = "pointer";
+    span.onclick = () => toggleDone(todo.id);
+
+    const delBtn = document.createElement("button");
+    delBtn.className = "delBtn";
+    delBtn.textContent = "삭제";
+    delBtn.onclick = () => deleteTodo(todo.id);
+
+    const edBtn = document.createElement("button");
+    edBtn.className = "edBtn";
+    edBtn.textContent = "수정";
+    edBtn.onclick = () => updateTodo(todo.id, span);
+
+    li.appendChild(span);
+
+    const blc = document.createElement("div");
+    blc.appendChild(edBtn);
+    blc.appendChild(delBtn);
+    li.appendChild(blc);
+    list.appendChild(li);
+  });
+}
+
+function updateTodo(id: number, span: HTMLSpanElement) : void{
+  // 수정 : 프롬프트 띄워서 새 값 받고 해당 tod에 반영하고...
+  // 이번에는 수정 버튼을 하나 만들어라 -> 수정 버튼 누르면 span이 input 창으로 바뀌고 거기서 수정하면 반영되는 코드로
+  // html 수정해서 수정 버튼 만들면 매우 굿,,,
+  const curText = span.textContent;
+  const editInput = document.createElement("input");
+  editInput.type = "text";
+  editInput.value = curText;
+  editInput.className = "edit-input";
+
+  const parent = span.parentNode;
+  if(parent === null) return;
+  parent.insertBefore(editInput, span);
+  span.remove();
+
+  editInput.addEventListener("keydown", (e) => {
+    if(e.key ==="Enter") {
+      const newText = editInput.value.trim();
+      if(!newText) return;
+      todos = todos.map((todo) => {
+        return todo.id === id ? { ...todo, text: newText} : todo;
+      });
+      render();
+    }
+  });
+  editInput.addEventListener("blur", () => {
+    render();
+  });
+}

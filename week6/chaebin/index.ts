@@ -78,7 +78,7 @@
         editBtn.textContent = "수정";
         editBtn.onclick = () => {
             const newText = document.createElement("input");
-            newText.class = "edit-input";
+            newText.className = "edit-input";
             newText.value = todo.text;
 
             li.replaceChild(newText, span);

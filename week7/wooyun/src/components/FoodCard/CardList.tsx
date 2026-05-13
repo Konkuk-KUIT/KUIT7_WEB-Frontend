@@ -12,7 +12,7 @@ import coffee from "../../assets/coffee.svg";
 import extra from "../../assets/extra.svg";
 import FoodCard from "./FoodCard";
 
-const foods = [
+export const foods = [
   { id: 1, name: "피자", image: pizza },
   { id: 2, name: "샐러드", image: salad },
   { id: 3, name: "햄버거", image: burger },

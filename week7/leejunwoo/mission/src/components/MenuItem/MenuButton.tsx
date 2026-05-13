@@ -1,5 +1,3 @@
-import React from 'react'
-
 type MenuProps = {
     image: string
     name: string

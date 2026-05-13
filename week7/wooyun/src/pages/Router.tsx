@@ -11,11 +11,11 @@ const Router = () => {
       element: <Home />,
     },
     {
-      path: "/store",
+      path: "/store/:FoodId/:storeId",
       element: <Stores />,
     },
     {
-      path: "/store/:storeId",
+      path: "/store/:FoodId",
       element: <Store />,
     },
     {

@@ -3,9 +3,10 @@ import StoreCard from "./StoreCard";
 
 const StoreList = () => {
   return (
-    <div>
+    <div className="flex flex-col">
       {stores.map((store) => (
         <StoreCard
+          key={store.id}
           id={store.id}
           name={store.name}
           rate={store.rate}

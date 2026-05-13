@@ -2,9 +2,9 @@ import { useParams } from "react-router-dom";
 import { foods } from "../FoodCard/CardList";
 
 const Menutitle = () => {
-  const { storeId } = useParams();
+  const { FoodId } = useParams();
 
-  const food = foods.find((food) => food.id === Number(storeId));
+  const food = foods.find((food) => food.id === Number(FoodId));
 
   if (!food) {
     return <div>안보이냐</div>;

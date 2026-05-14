@@ -12,16 +12,17 @@ import dessertImg from "../../assets/dessert.svg";
 import coffeeImg from "../../assets/coffe.svg";
 import moreImg from "../../assets/more.svg";
 import OrderBar from "../../components/OrderBar/OrderBar";
+import frontImg from "../../assets/front.svg"
 
 const Home = () => {
 
   return (
-    <div>
-      <div>
-        <span>오늘은 무엇을 먹을까요?</span>
-        <span>한남중앙로 40길 (한남 빌리지)(으)로 배달 &gt</span>
+    <div className="text-left w-[390px] font-[pretendard]">
+      <div className="flex flex-col gap-3 pl-6">
+        <span className="font-bold text-[26px] text-[#191f28] ">오늘은 무엇을 먹을까요?</span>
+        <span className="font-[500] text-[#333d48] text-[17px] flex items-center">한남중앙로 40길 (한남 빌리지)(으)로 배달 <img src={frontImg} alt="화살표" className="w-[20px] h-[20px]" /> </span>
       </div>
-      <div>
+      <div className="grid grid-cols-3 gap-x-[10px] gap-y-[10px] px-6 pt-7">
         <MenuButton image={pizzaImg} name="피자" />
         <MenuButton image={saladImg} name="샐러드" />
         <MenuButton image={hamburgerImg} name="햄버거" />

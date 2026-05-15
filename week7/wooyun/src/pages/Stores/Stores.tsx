@@ -1,12 +1,12 @@
 import BackSpaceTop from "../../components/FixedBar/BackSpaceTop";
-import StoreList2 from "../../components/MenuList/StoreList2";
-import OrderBar from "../../components/OrderBar/OrderBar";
+import StorePrint from "../../components/MenuList/StorePrint";
+import OrderBar from "../../components/FixedBar/OrderBar";
 
 const Stores = () => {
   return (
     <div>
       <BackSpaceTop />
-      <StoreList2 />
+      <StorePrint />
       <OrderBar />
     </div>
   );

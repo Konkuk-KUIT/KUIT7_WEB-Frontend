@@ -1,7 +1,7 @@
-import CardList from "../../components/FoodCard/CardList";
-import FoodCardTitle from "../../components/FoodCard/FoodCardTitle";
+import CardList from "../../components/FoodList/CardList";
+import FoodCardTitle from "../../components/FoodList/FoodCardTitle";
 import Top from "../../components/FixedBar/Top";
-import OrderBar from "../../components/OrderBar/OrderBar";
+import OrderBar from "../../components/FixedBar/OrderBar";
 
 const Home = () => {
   return (

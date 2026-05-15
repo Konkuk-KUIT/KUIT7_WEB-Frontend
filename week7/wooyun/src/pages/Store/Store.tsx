@@ -1,5 +1,5 @@
 import BackSpaceTop from "../../components/FixedBar/BackSpaceTop";
-import OrderBar from "../../components/OrderBar/OrderBar";
+import OrderBar from "../../components/FixedBar/OrderBar";
 import Menutitle from "../../components/StoreList/Menutitle";
 import StoreList from "../../components/StoreList/StoreList";
 

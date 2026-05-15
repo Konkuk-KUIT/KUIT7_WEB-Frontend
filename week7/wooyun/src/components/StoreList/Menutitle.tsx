@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { foods } from "../FoodCard/CardList";
+import { foods } from "../FoodList/CardList";
 
 const Menutitle = () => {
   const { FoodId } = useParams();

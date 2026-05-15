@@ -1,8 +1,9 @@
 import { useParams } from "react-router-dom";
 import stores from "../../models/stores";
 import StoreInfo from "./StoreInfo";
+import Menulist from "./Menulist";
 
-const StoreList2 = () => {
+const StorePrint = () => {
   const { storeId } = useParams();
 
   const store = stores.find((store) => store.id === Number(storeId));
@@ -21,8 +22,9 @@ const StoreList2 = () => {
         minDeliveryTime={store.minDeliveryTime}
         maxDeliveryTime={store.maxDeliveryTime}
       />
+      <Menulist menus={store.menus} />
     </div>
   );
 };
 
-export default StoreList2;
+export default StorePrint;

@@ -1,0 +1,108 @@
+{
+    type Todo = {
+        id: number;
+        text: string;
+        done: boolean;
+    };
+
+    let todos: Todo[] = [];
+
+    const form = document.getElementById("todo-form");
+    const input = document.getElementById("todo-input");
+    const list = document.getElementById("todo-list");
+
+    if (!form || !input || !list) {
+        throw new Error("필수 요소가 없습니다.");
+    }
+
+    if (!(input instanceof HTMLInputElement)) {
+        throw new Error("input 요소가 올바르지 않습니다.");
+    }
+
+    form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const text = input.value.trim();
+    if (text) {
+        const newTodo = {
+        id: Date.now(),
+        text,
+        done: false,
+        };
+        todos.push(newTodo);
+        render();
+        input.value = "";
+    }
+    });
+
+    // 삭제
+    function deleteTodo(id: number) {
+        todos = todos.filter((todo) => todo.id !== id);
+        render();
+    }
+
+    // 완료(true/false)
+    function toggleDone(id: number) {
+        todos = todos.map((todo) => 
+            todo.id === id ? { ...todo, done: !todo.done } : todo
+        );
+        render();
+    }  
+
+    // 렌더링
+    function render() {
+    if (!(list instanceof HTMLUListElement)) {
+        throw new Error("list 요소가 올바르지 않습니다.");
+    }
+
+    list.innerHTML = "";
+    todos.forEach((todo) => {
+        if (!(list instanceof HTMLUListElement)) {
+        throw new Error("list 요소가 올바르지 않습니다.");
+        }
+
+        const li = document.createElement("li");
+        li.className = todo.done ? "done" : "";
+
+        const span = document.createElement("span");
+        span.textContent = todo.text;
+        span.style.cursor = "pointer";
+        span.onclick = () => toggleDone(todo.id);
+
+        const delBtn = document.createElement("button");
+        delBtn.className = "delete-btn";
+        delBtn.textContent = "삭제";
+        delBtn.onclick = () => deleteTodo(todo.id);
+
+        const editBtn = document.createElement("button");
+        editBtn.className = "edit-btn";
+        editBtn.textContent = "수정";
+        editBtn.onclick = () => {
+            const newText = document.createElement("input");
+            newText.className = "edit-input";
+            newText.value = todo.text;
+
+            li.replaceChild(newText, span);
+            newText.focus();
+
+            newText.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") {
+                    updateTodo(todo.id, newText.value);
+                }
+            });
+        }
+
+        li.appendChild(span);
+        li.appendChild(editBtn);
+        li.appendChild(delBtn);
+        list.appendChild(li);
+    });
+    }
+
+    // 수정
+    function updateTodo(id: number, newText: string) {
+        todos = todos.map((todo) => {
+            return todo.id === id ? { ...todo, text: newText } : todo;
+        });
+        render();
+    }
+}

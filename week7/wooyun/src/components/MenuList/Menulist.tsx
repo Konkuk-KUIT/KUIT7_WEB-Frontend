@@ -10,13 +10,14 @@ interface Menu {
 
 interface MenulistProps {
   menus: Menu[];
+  storename: string;
 }
 
-const Menulist = ({ menus }: MenulistProps) => {
+const Menulist = ({ menus, storename }: MenulistProps) => {
   return (
     <div className="flex flex-col">
       {menus.map((menu) => (
-        <MenuItem key={menu.id} menu={menu} />
+        <MenuItem key={menu.id} id={menu.id} storename={storename} name={menu.name} price={menu.price} ingredients={menu.ingredients} isBest={menu.isBest} />
       ))}
     </div>
   );

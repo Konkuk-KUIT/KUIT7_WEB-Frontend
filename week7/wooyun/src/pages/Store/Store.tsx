@@ -5,10 +5,12 @@ import StoreList from "../../components/StoreList/StoreList";
 
 const Store = () => {
   return (
-    <div>
-      <BackSpaceTop />
-      <Menutitle />
-      <StoreList />
+    <div className="h-full flex flex-col">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden">
+        <BackSpaceTop />
+        <Menutitle />
+        <StoreList />
+      </div>
       <OrderBar />
     </div>
   );

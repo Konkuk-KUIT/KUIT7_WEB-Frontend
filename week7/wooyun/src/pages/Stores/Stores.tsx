@@ -4,9 +4,11 @@ import OrderBar from "../../components/FixedBar/OrderBar";
 
 const Stores = () => {
   return (
-    <div>
-      <BackSpaceTop />
-      <StorePrint />
+    <div className="h-full flex flex-col">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden">
+        <BackSpaceTop />
+        <StorePrint />
+      </div>
       <OrderBar />
     </div>
   );

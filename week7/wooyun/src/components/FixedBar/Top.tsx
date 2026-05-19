@@ -1,6 +1,6 @@
 const Top = () => {
   return (
-    <div className="w-full h-[47px]">
+    <div className="w-full h-[10px]">
     </div>
   )
 }

@@ -22,7 +22,7 @@ const StorePrint = () => {
         minDeliveryTime={store.minDeliveryTime}
         maxDeliveryTime={store.maxDeliveryTime}
       />
-      <Menulist menus={store.menus} />
+      <Menulist menus={store.menus} storename={store.name} />
     </div>
   );
 };

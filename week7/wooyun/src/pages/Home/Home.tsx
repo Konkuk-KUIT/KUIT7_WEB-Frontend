@@ -5,7 +5,7 @@ import OrderBar from "../../components/FixedBar/OrderBar";
 
 const Home = () => {
   return (
-    <div className="px-[24px] pt-[41px] flex flex-col">
+    <div className="px-[24px] py-[70px] flex flex-col">
       <Top />
       <div className="flex flex-col gap-[74px]">
         <FoodCardTitle />

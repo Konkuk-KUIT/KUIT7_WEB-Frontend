@@ -1,19 +1,20 @@
 import Button from "../Button";
+import useCartStore from "../../pages/Store/useCartStore";
 
 interface Menu {
   id: number;
+  storename: string;
   name: string;
-  price: number | string;
+  price: number;
   ingredients: string;
   isBest: boolean;
 }
 
-interface MenuItemProps {
-  menu: Menu;
-}
-
-const MenuItem = ({ menu }: MenuItemProps) => {
-  const handleAddMenu = () => {};
+const MenuItem = ({ id, storename, name, price, ingredients, isBest }: Menu) => {
+  const addMenu = useCartStore((state) => state.addMenu);
+  const handleAddMenu = () => {
+    addMenu({ id, storename, name, price, ingredients })
+  };
 
   return (
     <div className="w-full h-[110px] flex gap-[19px]">
@@ -24,19 +25,19 @@ const MenuItem = ({ menu }: MenuItemProps) => {
       <div className="flex flex-col gap-[5px] pt-[16px]">
         <div className="flex gap-[6px]">
           <h3 className="text-[#333D4B] font-['Pretendard'] text-[17px] font-[600] leading-[normal]">
-            {menu.name}
+            {name}
           </h3>
-          {menu.isBest && (
+          {isBest && (
             <span className="text-[#3182F6] font-['Pretendard'] text-[17px] font-[600] leading-[normal]">
               BEST
             </span>
           )}
         </div>
         <span className="text-[#6B7684] font-['Pretendard'] text-[13px] font-[500] leading-[normal]">
-          {menu.price}원
+          {price}원
         </span>
         <p className="w-[201px] text-[#6B7684] font-['Pretendard'] text-[13px] font-[500] leading-[normal]">
-          {menu.ingredients}
+          {ingredients}
         </p>
       </div>
       <div className="pt-[48px] pr-[24px] whitespace-nowrap">

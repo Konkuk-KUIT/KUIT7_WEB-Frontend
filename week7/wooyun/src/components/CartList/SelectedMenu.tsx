@@ -3,14 +3,13 @@ import alert from "../../assets/alert.svg";
 import plus from "../../assets/plus.svg";
 import useCartStore from "../../pages/Store/useCartStore";
 
-
 const SelectedMenu = ({}) => {
   const menus = useCartStore((state) => state.menus);
   const navigate = useNavigate();
 
   const handleBack = () => {
     navigate(-1);
-  } 
+  };
 
   return (
     <div>
@@ -39,7 +38,7 @@ const SelectedMenu = ({}) => {
                 </p>
               </div>
               <p className="text-[#6B7684] font-['Pretendard'] text-[13px] font-[500] leading-[normal]">
-                {menu.price}원
+                {menu.price.toLocaleString()}원
               </p>
             </div>
             <div className="pt-[40px] pl-[16px]">
@@ -51,7 +50,10 @@ const SelectedMenu = ({}) => {
         </div>
       ))}
       <div className="mt-[16px] h-[1px] bg-[#F2F4F6]"></div>
-      <div onClick={handleBack} className="flex pt-[19px] pl-[160px] items-center gap-[2px] cursor-pointer">
+      <div
+        onClick={handleBack}
+        className="flex pt-[19px] pl-[160px] items-center gap-[2px] cursor-pointer"
+      >
         <p className="text-[#3182F6] font-['Pretendard'] text-[17px] font-[600] leading-[normal]">
           더 담기
         </p>

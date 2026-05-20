@@ -22,7 +22,7 @@ const PayBar = () => {
         disabled={isDisabled}
         className="text-[#FFF] font-['Pretendard'] text-[16px] font-[600] leading-[normal]"
       >
-        {totaldeliveryFee}원 결제하기
+        {totaldeliveryFee.toLocaleString()}원 결제하기
       </Button>
     </div>
   );

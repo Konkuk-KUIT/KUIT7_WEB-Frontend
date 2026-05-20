@@ -38,11 +38,11 @@ const StoreCard = ({
         <span className="flex items-center">
           <img src={star} alt="별점" className="w-[13.161px] h-[13.161px]" />
           <p className="text-[#6B7684] font-['Pretendard'] text-[13px] font-[500] leading-[normal]">
-            {rate} ({reviewCnt})
+            {rate} ({reviewCnt.toLocaleString()})
           </p>
         </span>
         <span className="text-[#6B7684] font-['Pretendard'] text-[13px] font-[500] leading-[normal]">
-          {minDeliveryTime}분~{maxDeliveryTime}분 ∙ 배달비 {deliveryFee}원
+          {minDeliveryTime}분~{maxDeliveryTime}분 ∙ 배달비 {deliveryFee.toLocaleString()}원
         </span>
       </div>
     </Link>

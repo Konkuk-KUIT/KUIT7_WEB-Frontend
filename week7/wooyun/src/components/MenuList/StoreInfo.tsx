@@ -32,7 +32,7 @@ const StoreInfo = ({
           {rate}
         </span>
         <span className="text-[#4E5968] font-['Pretendard'] text-[16px] font-[500] leading-[normal]">
-          리뷰{reviewCnt}
+          리뷰{reviewCnt.toLocaleString()}
         </span>
       </div>
       <div className="flex items-center pt-[21px] pl-[24px] gap-[12px]">
@@ -48,7 +48,7 @@ const StoreInfo = ({
           최소주문
         </p>
         <p className="text-[#4E5968] font-['Pretendard'] text-[16px] font-[500] leading-[normal]">
-          {minDeliveryPrice}원
+          {minDeliveryPrice.toLocaleString()}원
         </p>
       </div>
       <div className="flex items-center pt-[10px] pl-[24px] gap-[12px]">

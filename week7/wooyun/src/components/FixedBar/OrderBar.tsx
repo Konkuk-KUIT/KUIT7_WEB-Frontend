@@ -19,7 +19,7 @@ const OrderBar = () => {
           총 주문금액
         </p>
         <p className="text-[#4E5968] font-['Pretendard'] text-[17px] font-normal font-semibold leading-[normal]">
-          {totalPrice}원
+          {totalPrice.toLocaleString()}원
         </p>
       </div>
       <div className="py-[19px]">

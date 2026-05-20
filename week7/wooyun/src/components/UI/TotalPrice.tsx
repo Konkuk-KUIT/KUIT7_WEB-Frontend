@@ -16,7 +16,7 @@ const TotalPrice = ({ label, price, variant = "default" }: TotalPriceProps) => {
             {label}
         </p>
         <p className="text-[#505967] font-['Pretendard'] text-[17px] font-[500] leading-[normal]">
-            {price}원
+            {price.toLocaleString()}원
         </p>
     </div>
   )

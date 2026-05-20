@@ -13,9 +13,9 @@ const TotalFee = () => {
     <div>
       <div className="pt-[16px]"></div>
       <div className="flex flex-col pt-[8px] px-[24px] gap-[24px]">
-        <TotalPrice label="주문금액" price={totalPrice} />
-        <TotalPrice label="배달요금" price={deliveryFee} />
-        <TotalPrice label="총 결제금액" price={TotaldeliveryFee} variant="bold" />
+        <TotalPrice label="주문금액" price={totalPrice.toLocaleString()} />
+        <TotalPrice label="배달요금" price={deliveryFee.toLocaleString()} />
+        <TotalPrice label="총 결제금액" price={TotaldeliveryFee.toLocaleString()} variant="bold" />
       </div>
     </div>
   );

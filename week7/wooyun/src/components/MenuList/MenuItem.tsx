@@ -34,7 +34,7 @@ const MenuItem = ({ id, storename, name, price, ingredients, isBest }: Menu) => 
           )}
         </div>
         <span className="text-[#6B7684] font-['Pretendard'] text-[13px] font-[500] leading-[normal]">
-          {price}원
+          {price.toLocaleString()}원
         </span>
         <p className="w-[201px] text-[#6B7684] font-['Pretendard'] text-[13px] font-[500] leading-[normal]">
           {ingredients}

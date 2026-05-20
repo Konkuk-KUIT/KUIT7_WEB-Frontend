@@ -1,4 +1,5 @@
 import star from "../../assets/star.svg";
+import InfoRow from "../UI/InfoRow";
 
 interface StoreInfoProps {
   name: string;
@@ -22,43 +23,33 @@ const StoreInfo = ({
       <p className="text-[#191F28] font-['Pretendard'] text-[26px] font-[700] leading-[normal] pt-[26px] pl-[24px]">
         {name}
       </p>
-      <div className="flex items-center pt-[7px] pl-[23px] gap-[5px]">
-        <img
-          src={star}
-          alt="평점"
-          className="w-[18px] h-[19px] fill-[#FFD158]"
-        />
-        <span className="text-[#4E5968] font-['Pretendard'] text-[17px] font-[600] leading-[normal]">
-          {rate}
-        </span>
-        <span className="text-[#4E5968] font-['Pretendard'] text-[16px] font-[500] leading-[normal]">
-          리뷰{reviewCnt.toLocaleString()}
-        </span>
-      </div>
-      <div className="flex items-center pt-[21px] pl-[24px] gap-[12px]">
-        <p className="text-[#4E5968] font-['Pretendard'] text-[16px] font-[500] leading-[normal]">
-          결제방법
-        </p>
-        <p className="text-[#4E5968] font-['Pretendard'] text-[16px] font-[500] leading-[normal]">
-          토스결제만 현장결제 안됨
-        </p>
-      </div>
-      <div className="flex items-center pt-[10px] pl-[24px] gap-[12px]">
-        <p className="text-[#4E5968] font-['Pretendard'] text-[16px] font-[500] leading-[normal]">
-          최소주문
-        </p>
-        <p className="text-[#4E5968] font-['Pretendard'] text-[16px] font-[500] leading-[normal]">
-          {minDeliveryPrice.toLocaleString()}원
-        </p>
-      </div>
-      <div className="flex items-center pt-[10px] pl-[24px] gap-[12px]">
-        <p className="text-[#4E5968] font-['Pretendard'] text-[16px] font-[500] leading-[normal]">
-          배달시간
-        </p>
-        <p className="text-[#4E5968] font-['Pretendard'] text-[16px] font-[500] leading-[normal]">
-          약 {minDeliveryTime}~{maxDeliveryTime}분
-        </p>
-      </div>
+      <InfoRow
+        icon={
+          <img
+            src={star}
+            alt="평점"
+            className="w-[18px] h-[19px] fill-[#FFD158]"
+          />
+        }
+        label={rate.toString()}
+        value={`리뷰${reviewCnt.toLocaleString()}`}
+        className="pt-[7px] pl-[23px] gap-[5px]"
+      />
+      <InfoRow
+        label="결제방법"
+        value="토스결제만 현장결제 안됨"
+        className="pt-[21px] pl-[24px] gap-[12px]"
+      />
+      <InfoRow
+        label="최소주문"
+        value={`${minDeliveryPrice.toLocaleString()}원`}
+        className="pt-[10px] pl-[24px] gap-[12px]"
+      />
+      <InfoRow
+        label="배달시간"
+        value={`약 ${minDeliveryTime}~${maxDeliveryTime}분`}
+        className="pt-[10px] pl-[24px] gap-[12px]"
+      />
       <div className="mt-[14px] border-b border-[#E5E8EB]"></div>
     </div>
   );

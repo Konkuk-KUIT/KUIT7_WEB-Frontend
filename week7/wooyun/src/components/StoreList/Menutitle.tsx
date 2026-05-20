@@ -7,7 +7,7 @@ const Menutitle = () => {
   const food = foods.find((food) => food.id === Number(FoodId));
 
   if (!food) {
-    return <div>안보이냐</div>;
+    return <div></div>;
   }
 
   return (

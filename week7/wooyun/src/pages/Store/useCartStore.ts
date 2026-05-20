@@ -19,10 +19,11 @@ interface addMenuType {
 
 interface CartState {
   menus: Menu[];
+  warningMessage: string;
 
   addMenu: (menu: addMenuType) => void;
-
   initializeMenu: () => void;
+
 }
 
 const initialState: Pick<CartState, "menus"> = {
@@ -31,6 +32,7 @@ const initialState: Pick<CartState, "menus"> = {
 
 const useCartStore = create<CartState>((set) => ({
   menus: initialState.menus,
+  warningMessage: "",
 
   addMenu: (menu) => {
     set((state) => {

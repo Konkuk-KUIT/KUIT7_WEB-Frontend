@@ -1,12 +1,11 @@
-import './App.css'
+import Router from "./pages/Router";
 
-function App() {
-
+const App = () => {
   return (
     <>
-      <div>mission</div>
+      <Router />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

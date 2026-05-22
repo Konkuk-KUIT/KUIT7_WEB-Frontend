@@ -144,7 +144,7 @@ const stores = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     name: "힘난다 샐러드",
     rate: 4.1,
     reviewCnt: 34,

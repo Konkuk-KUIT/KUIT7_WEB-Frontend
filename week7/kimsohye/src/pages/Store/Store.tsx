@@ -57,7 +57,7 @@ const store = stores[0];
 
             <div className="mt-[24px] flex flex-col gap-[32px]">
               {store.menus.map((menu) => (
-                <MenuItem key={menu.id} menu={menu} />
+                <MenuItem key={menu.id} {...menu} />
               ))}
             </div>
           </section>

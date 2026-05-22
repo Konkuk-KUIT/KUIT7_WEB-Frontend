@@ -1,17 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import Button from "../Button";
+import useCartStore from "../../pages/Store/userCartStore";
 
-interface Menu {
-  price: number;
-}
 
 const OrderBar = () => {
-  const menus: Menu[] = [
-    { price: 12100 },
-  ];
 
-  const handleOrder = () => {};
+  const navigate=useNavigate();
+  const handleOrder = () => {
+    navigate("/cart");
+  };
 
-  const totalPrice = menus.reduce((acc, cur) => acc + cur.price, 0);
+  const menus=useCartStore((state)=>state.menus)
+  
 
   return (
     <div className="absolute bottom-0 left-0 flex h-[111px] w-[390px] items-center justify-between rounded-t-[16px] bg-white px-[30px] shadow-[0_-8px_16px_0_rgba(0,0,0,0.10)]">
@@ -21,7 +21,7 @@ const OrderBar = () => {
         </div>
 
         <div className="mt-[6px] text-[17px] font-bold text-[#4E5968]">
-          {totalPrice.toLocaleString()}원
+          {menus.reduce((acc,cur)=>acc+cur.price,0)}원
         </div>
       </div>
 

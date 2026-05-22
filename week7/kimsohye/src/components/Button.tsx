@@ -13,7 +13,6 @@ const sizeStyles = {
   xl: {
     padding: "18px 112px 19px 113px",
     fontSize: "16px",
-    disabled:"true",
   },
 } as const;
 
@@ -47,9 +46,15 @@ const Button: React.FC<ButtonProps> = ({
   type = "button",
   size = "sm",
   disabled,
+  ...rest
 }) => {
   return (
-    <StyledButton type={type} size={size} disabled={disabled}>
+    <StyledButton
+      type={type}
+      size={size}
+      disabled={disabled}
+      {...rest}
+    >
       {children}
     </StyledButton>
   );

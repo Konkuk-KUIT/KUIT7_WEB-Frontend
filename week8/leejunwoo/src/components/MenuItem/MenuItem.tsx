@@ -2,6 +2,7 @@ import Button from "../Button";
 import useCartStore from "../../pages/Store/useCartStore";
 
 interface Menu {
+  id: number;
   name: string;
   price: number;
   ingredients: string;
@@ -10,16 +11,31 @@ interface Menu {
 
 interface MenuItemProps {
   menu: Menu;
+  store: Store;
 }
 
-const MenuItem = ({ menu }: MenuItemProps) => {
+interface Store {
+  id: number;
+  name: string;
+  deliveryFee: number;
+  minDeliveryPrice: number;
+}
+
+const MenuItem = ({ menu, store }: MenuItemProps) => {
   const addMenu = useCartStore((state) => state.addMenu);
   const handleAddMenu = () => {
     addMenu({
-      name: menu.name,
-      price: menu.price,
-      ingredients: menu.ingredients,
-    });
+        id: menu.id,
+        name: menu.name,
+        price: menu.price,
+        ingredients: menu.ingredients,
+      },
+      {
+        id: store.id,
+        name: store.name,
+        deliveryFee: store.deliveryFee,
+        minDeliveryPrice: store.minDeliveryPrice,
+      });
   };
 
   return (

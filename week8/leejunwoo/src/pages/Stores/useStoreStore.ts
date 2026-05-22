@@ -25,7 +25,7 @@ interface StoreStore {
     stores: Store[];
     getStoreById: (id:number) => Store | undefined;
 }
-const useStoreStore = create<StoreStore>((set, get) => ({
+const useStoreStore = create<StoreStore>((_, get) => ({
     stores,
     getStoreById: (id) => {
         return get().stores.find((store) => store.id === id);

@@ -20,7 +20,7 @@ const Stores = () => {
       <div className="w-auto h-[1px] bg-[#E5E8EB]"></div>
       <div className="pl-[24px] pt-[20px] pb-[5px] font-[#6B7684] font-bold font-[17px] font-[pretendard]"><span>샐러드</span></div>
       {store.menus.map((menu) => (
-        <MenuItem key={menu.id} menu={menu}/>
+        <MenuItem key={menu.id} menu={menu} store={store}/>
       ))}
       <OrderBar/>
     </div>

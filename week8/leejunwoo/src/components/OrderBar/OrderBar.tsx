@@ -2,10 +2,6 @@ import Button from "../Button";
 import useCartStore from "../../pages/Store/useCartStore";
 import { useNavigate } from "react-router-dom";
 
-interface Menu {
-  price: number;
-}
-
 const OrderBar = () => {
   const navigate = useNavigate();
   const handleOrder = () => {

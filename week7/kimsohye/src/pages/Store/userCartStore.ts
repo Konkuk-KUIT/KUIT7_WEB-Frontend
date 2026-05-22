@@ -1,27 +1,56 @@
-import { createStaticRouter } from "react-router-dom";
-import {create} from "zustand"
+import { create } from "zustand";
 
-interface Menu{
-    name: string;
-    price: number;
-    ingredients: string;
+interface Menu {
+  name: string;
+  price: number;
+  ingredients: string;
 }
 
-interface CartState{
-    menus:Menu[];
-
-    addMenu:(menu:Menu)=>void;
+interface StoreInfo {
+  id: number;
+  name: string;
+  deliveryFee: number;
+  minDeliveryPrice: number;
 }
 
-const initialState:Pick<CartState,"menus">={
-    menus:[],
-};
+interface CartState {
+  store: StoreInfo | null;
+  menus: Menu[];
 
-const useCartStore=create<CartState>((set)=>({
-    menus:initialState.menus,
-    addMenu:(menu)=>{
-        set((state)=>({...state, menus:[...state.menus,menu]}))
+  addMenu: (store: StoreInfo, menu: Menu) => void;
+  clearCart: () => void;
+}
+
+const useCartStore = create<CartState>((set, get) => ({
+  store: null,
+  menus: [],
+
+  addMenu: (store, menu) => {
+    const currentStore = get().store;
+
+    if (currentStore && currentStore.id !== store.id) {
+      alert("기존 장바구니 정보가 삭제되었습니다.");
+
+      set({
+        store,
+        menus: [menu],
+      });
+
+      return;
     }
+
+    set((state) => ({
+      store,
+      menus: [...state.menus, menu],
+    }));
+  },
+
+  clearCart: () => {
+    set({
+      store: null,
+      menus: [],
+    });
+  },
 }));
 
-export default useCartStore
+export default useCartStore;

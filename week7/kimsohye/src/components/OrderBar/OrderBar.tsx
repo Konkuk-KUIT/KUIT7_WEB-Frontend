@@ -2,16 +2,18 @@ import { useNavigate } from "react-router-dom";
 import Button from "../Button";
 import useCartStore from "../../pages/Store/userCartStore";
 
-
 const OrderBar = () => {
+  const navigate = useNavigate();
 
-  const navigate=useNavigate();
+  const menus = useCartStore((state) => state.menus);
+
+  const totalOrderPrice = menus.reduce((sum, menu) => {
+    return sum + menu.price;
+  }, 0);
+
   const handleOrder = () => {
     navigate("/cart");
   };
-
-  const menus=useCartStore((state)=>state.menus)
-  
 
   return (
     <div className="absolute bottom-0 left-0 flex h-[111px] w-[390px] items-center justify-between rounded-t-[16px] bg-white px-[30px] shadow-[0_-8px_16px_0_rgba(0,0,0,0.10)]">
@@ -21,7 +23,7 @@ const OrderBar = () => {
         </div>
 
         <div className="mt-[6px] text-[17px] font-bold text-[#4E5968]">
-          {menus.reduce((acc,cur)=>acc+cur.price,0)}원
+          {totalOrderPrice.toLocaleString()}원
         </div>
       </div>
 

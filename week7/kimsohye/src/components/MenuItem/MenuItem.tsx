@@ -1,18 +1,36 @@
 import Button from "../Button";
 import useCartStore from "../../pages/Store/userCartStore";
 
-interface Menu {
+interface StoreInfo {
+  id: number;
+  name: string;
+  deliveryFee: number;
+  minDeliveryPrice: number;
+}
+
+interface MenuItemProps {
   name: string;
   isBest: boolean;
   price: number;
   ingredients: string;
+  store: StoreInfo;
 }
 
-const MenuItem = ({ name, isBest, price, ingredients }: Menu) => {
+const MenuItem = ({
+  name,
+  isBest,
+  price,
+  ingredients,
+  store,
+}: MenuItemProps) => {
   const addMenu = useCartStore((state) => state.addMenu);
 
   const handleAddMenu = () => {
-    addMenu({ name, price, ingredients });
+    addMenu(store, {
+      name,
+      price,
+      ingredients,
+    });
   };
 
   return (

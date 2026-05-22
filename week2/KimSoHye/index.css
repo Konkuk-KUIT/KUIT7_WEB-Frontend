@@ -94,6 +94,7 @@ button {
     padding-bottom: 92px;
 }
 .content{
+    box-sizing: border-box;
     border-top: 4px solid #d9d9d9;
     padding: 16px;
     display: flex;
@@ -131,6 +132,7 @@ button {
     line-height: 16px; /* 133.333% */
 }
 .main-action{
+    box-sizing: border-box;
     display: flex;
     padding: 10px 16px;
     align-items: center;
@@ -229,6 +231,7 @@ button {
     padding: 8px 0;
     align-items: flex-start;
     background-color: #FFFFFF;
+    border-top: 1px solid #EEE;
 }
 .bottom-bar-item{
     display: flex;

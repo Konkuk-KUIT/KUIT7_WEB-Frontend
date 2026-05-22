@@ -49,29 +49,29 @@ height: 110px;
 }
 .item{
     display: flex;
-align-items: flex-start;
-gap: 16px;
-align-self: stretch;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
 }
 .itemTitle{
     color: #000;
 
-/* 16 */
-font-family: Inter;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 20px; /* 125% */
+    /* 16 */
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 125% */
 }
 .itemSubTitle{
     color: #8C8C8C;
 
-/* 12 */
-font-family: Inter;
-font-size: 12px;
-font-style: normal;
-font-weight: 400;
-line-height: 16px; /* 133.333% */
+    /* 12 */
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 133.333% */
 }
 .itemPrice{
     color: #FF7E36;
@@ -129,10 +129,21 @@ height: 16px;
 }
 .itemInfo{
     display: flex;
-justify-content: flex-end;
-align-items: center;
-gap: 4px;
-align-self: stretch;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4px;
+    align-self: stretch;
+}
+.itemInfo span {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: #8c8c8c;
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
 }
 .itemContent{
     display: flex;
@@ -152,4 +163,13 @@ align-self: stretch;
     border-radius: 100px;
     background: #FF7E36;
     box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
+}
+.soldBadge {
+  display: inline-flex;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background-color: #f2f3f6;
+  color: #5f6368;
+  font-size: 12px;
+  line-height: 16px;
 }

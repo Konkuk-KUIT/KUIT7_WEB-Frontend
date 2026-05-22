@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import FoodCard from "../../components/FoodCard";
 import OrderBar from "../../components/OrderBar/OrderBar";
 import img1 from "../../assets/img1.svg";
@@ -29,9 +29,9 @@ const categories=[
   {icon: img12,name:"더보기"},
 ];
 
-
-
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex justify-center bg-white">
       <div className="relative h-[844px] w-[390px] overflow-hidden bg-white">
@@ -46,12 +46,14 @@ const Home = () => {
 
           <section className="mt-[86px] grid grid-cols-3 gap-x-[9px] gap-y-[9px]">
             {categories.map((category) => (
-              <div
+              <button
                 key={category.name}
-                className="text-inherit no-underline"
+                type="button"
+                onClick={() => navigate("/store")}
+                className="border-0 bg-transparent p-0"
               >
                 <FoodCard icon={category.icon} name={category.name} />
-              </div>
+              </button>
             ))}
           </section>
         </main>

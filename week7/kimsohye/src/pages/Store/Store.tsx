@@ -1,12 +1,17 @@
 import OrderBar from "../../components/OrderBar/OrderBar";
 import backIcon from "../../assets/arrow.svg";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import MenuItem from "../../components/MenuItem/MenuItem";
 import stores from "../../models/stores";
 
-
 const Store = () => {
-const store = stores[0];
+  const { storeId } = useParams();
+
+  const store = stores.find((store) => store.id === Number(storeId));
+
+  if (!store) {
+    return <div>가게 정보를 찾을 수 없습니다.</div>;
+  }
 
   return (
     <div className="flex min-h-screen justify-center bg-white">
@@ -50,14 +55,23 @@ const store = stores[0];
             </div>
           </section>
 
-          <section className="px-[24px] pt-[25px] ">
+          <section className="px-[24px] pt-[25px]">
             <h2 className="m-0 text-[15px] font-semibold leading-none text-[#6B7684]">
               샐러드
             </h2>
 
             <div className="mt-[24px] flex flex-col gap-[32px]">
               {store.menus.map((menu) => (
-                <MenuItem key={menu.id} {...menu} />
+                <MenuItem
+                  key={menu.id}
+                  {...menu}
+                  store={{
+                    id: store.id,
+                    name: store.name,
+                    deliveryFee: store.deliveryFee,
+                    minDeliveryPrice: store.minDeliveryPrice,
+                  }}
+                />
               ))}
             </div>
           </section>

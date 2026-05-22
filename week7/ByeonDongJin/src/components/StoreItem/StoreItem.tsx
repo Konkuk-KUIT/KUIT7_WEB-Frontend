@@ -1,3 +1,5 @@
+import star from "../../assets/Star.svg";
+
 type storeDataProps = {
   id: number;
   name: string;
@@ -21,17 +23,19 @@ const StoreItem = ({
     <div className="w-[390px] h-[116px] flex">
       <div className="w-[54px] h-[54px] bg-[#ECECEC] rounded-[8px] mt-4 ml-6"></div>
       <div className="mt-4 ml-[17px]">
+        {id <=3 &&(
         <div className="font-['Pretendard'] text-[#333D4B] font-semiBold text-[17px]">
           {id}위
-        </div>
+        </div>)
+        }
         <div className="font-['Pretendard'] text-[#333D4B] font-semiBold text-[17px]">
           {name}
         </div>
-        <div className="font-['Pretendard'] text-[#6B7684] font-medium text-[13px]">
-          {rate} {reviewCnt}
+        <div className="font-['Pretendard'] text-[#6B7684] font-medium text-[13px] flex gap-1 items-center">
+          <img src={star} alt="별"/>{rate} ({reviewCnt})
         </div>
         <div className="font-['Pretendard'] text-[#6B7684] font-medium text-[13px]">
-          {minDeliveryTime}분~{maxDeliveryTime}분, 배달비 {deliveryFee}원
+          {minDeliveryTime}분~{maxDeliveryTime}분 ∙ 배달비 {deliveryFee}원 
         </div>
       </div>
     </div>

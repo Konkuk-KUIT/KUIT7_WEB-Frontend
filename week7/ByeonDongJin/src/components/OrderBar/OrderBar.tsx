@@ -5,6 +5,10 @@ import useCartStore from "../../pages/Store/useCartStore";
 const OrderBar = () => {
   const navigate = useNavigate();
   const handleOrder = () => {
+    if(menus.length < 1){
+      alert("메뉴를 담아주세요");
+      return;
+    }
     navigate("/cart");
   };
 

@@ -3,6 +3,8 @@ import left_chevron from "../../assets/left_chevron.svg";
 import { stores } from "../../models/stores";
 import OrderBar from "../../components/OrderBar/OrderBar";
 import MenuItem from "../../components/MenuItem/MenuItem";
+import yellowStar from "../../assets/yellowStar.svg";
+
 
 const Stores = () => {
   const params = useParams();
@@ -26,7 +28,8 @@ const Stores = () => {
                 <div className="font-['Pretendard'] mt-[26px] ml-6 color-[#191F28] text-[26px] font-bold">
                   {item.name}
                 </div>
-                <div className="flex gap-[9px] pt-1.5 pb-3 pl-[46px]">
+                <div className="flex gap-[9px] pt-1.5 pb-3 pl-[24px] items-center text-align text-[#4E5968]">
+                  <img src={yellowStar} alt="별"/>
                   <div className="font-['Pretendard'] text-[17px] font-semibold">
                     {item.rate}
                   </div>
@@ -35,13 +38,13 @@ const Stores = () => {
                   </div>
                 </div>
                 <div className="border-b border-[#E5E8EB]">
-                  <div className="font-['Pretendard'] pt-2.5 pl-6 text-[15px] font-medium">
+                  <div className="font-['Pretendard'] pt-2.5 pl-6 text-[15px] font-medium text-[#4E5968]">
                     결제방법 토스결제만 현장결제 안됨
                   </div>
-                  <div className="font-['Pretendard'] pt-2.5 pl-6 text-[15px] font-medium">
+                  <div className="font-['Pretendard'] pt-2.5 pl-6 text-[15px] font-medium text-[#4E5968]">
                     최소주문 {item.minDeliveryPrice}원
                   </div>
-                  <div className="font-['Pretendard'] pb-3.5 pt-2.5 pl-6 text-[15px] font-medium">
+                  <div className="font-['Pretendard'] pb-3.5 pt-2.5 pl-6 text-[15px] font-medium text-[#4E5968]">
                     배달시간 약 {item.minDeliveryTime}-{item.maxDeliveryTime}분
                   </div>
                 </div>
@@ -52,9 +55,13 @@ const Stores = () => {
                 </div>
                 {item.menus.map((items) => (
                   <MenuItem
+                    sid={item.id} // 가게의 id
                     name={items.name}
                     price={items.price}
                     ingredients={items.ingredients}
+                    isBest={items.isBest}
+                    minDeliveryPrice={item.minDeliveryPrice}
+                    sname={item.name}
                   />
                 ))}
               </div>

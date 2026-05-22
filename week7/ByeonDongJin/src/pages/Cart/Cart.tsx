@@ -27,9 +27,9 @@ const Cart = () => {
       <div>
         <div className="flex justify-between px-6 pt-[26px] pb-3">
           <div className="font-bold text-[17px] font-['Pretendard'] text-[#6B7684]">
-            샐로리 한남점
+            {menus[0].sname}
           </div>
-          {PRICE + 2000 < 13000 && (<div className="flex items-center justify-center gap-1.5">
+          {PRICE + 2000 < menus[0].minDeliveryPrice && (<div className="flex items-center justify-center gap-1.5">
             <div className="font-['Pretendard'] font-medium text-[15px] text-[#F04452]">
               최소금액 미달
             </div>
@@ -42,7 +42,7 @@ const Cart = () => {
             <SelectMenu name={menu.name} price={menu.price} />
           ))}
         </div>
-        <div className="flex font-['Pretendard'] text-[#3182F6] items-center justify-center pt-[19px] pb-5 border-t border-t-gray-300">
+        <div onClick={() => {if(menus.length > 0){navigate(`/store/${menus[0].sid}`)}}} className="flex font-['Pretendard'] text-[#3182F6] items-center justify-center pt-[19px] pb-5 border-t border-t-gray-300">
           더 담기 +
         </div>
       </div>
@@ -63,7 +63,7 @@ const Cart = () => {
       </div>
       <div className="w-full fixed bottom-0 mb-4 flex flex-col justify-center items-center">
         <div className="mb-5 text-4 font-medium text-[#6b7684]">
-          최소 주문금액 13,000원
+          최소 주문금액 {menus[0].minDeliveryPrice}원
         </div>
         {PRICE + 2000 >= 13000 ? <Button type="button" size="xl">
           {(PRICE + 2000).toLocaleString()}원 결제하기

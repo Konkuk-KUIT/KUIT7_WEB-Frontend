@@ -23,6 +23,7 @@ interface Store {
 
 const MenuItem = ({ menu, store }: MenuItemProps) => {
   const addMenu = useCartStore((state) => state.addMenu);
+  const formatPrice = (price: number) => price.toLocaleString();
   const handleAddMenu = () => {
     addMenu({
         id: menu.id,
@@ -43,7 +44,7 @@ const MenuItem = ({ menu, store }: MenuItemProps) => {
       <div style={{ width: "54px", height: "54px", backgroundColor: "#eee", borderRadius: "50px" }} />
       <div className="flex flex-col flex-1 gap-2.5">
         <h3 className="text-[#333D4B] font-pretnedard text-[17px] font-bold">{menu.name} <span className="text-[#3182f6] font-pretnedard text-[17px] font-bold">{menu.isBest?"BEST":null}</span></h3>
-        <span className="text-[#6B7684] font-pretnedard text-[13px]">{menu.price}</span>
+        <span className="text-[#6B7684] font-pretnedard text-[13px]">{formatPrice(menu.price)}원</span>
         <p className="text-[#6B7684] font-pretnedard text-[13px]">{menu.ingredients}</p>
       </div>
       <Button onClick={handleAddMenu} type="button" size="sm">

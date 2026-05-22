@@ -9,6 +9,7 @@ const OrderBar = () => {
   };
   const menus = useCartStore((state) => state.menus)
   const totalPrice = menus.reduce((acc, cur) => acc + cur.price, 0);
+  const formatPrice = (price: number) => price.toLocaleString();
 
   return (
     <div className="h-[80px]">
@@ -16,7 +17,7 @@ const OrderBar = () => {
         <div className="flex flex-col gap-1.25">
           <div className="text-[#6B7684] text-[15px]">총 주문금액</div>
           <div className="text-[#4E5968] text-[17px]">
-            {totalPrice}원
+            {formatPrice(totalPrice)}원
           </div>
         </div>
         <Button onClick={handleOrder} type="button" size="lg">

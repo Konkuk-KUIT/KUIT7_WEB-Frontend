@@ -3,22 +3,29 @@ import frontImg from "../../assets/front.svg";
 import plusImg from "../../assets/blueplus.svg";
 import useCartStore from "../Store/useCartStore";
 import { useNavigate } from "react-router-dom";
+import TopBar from "../../components/TopBar/TopBar";
 
 const Cart = () => {
   const navigate = useNavigate();
   const store = useCartStore((state) => state.store);
   const menus = useCartStore((state) => state.menus);
+  const clearCart = useCartStore((state) => state.clearCart);
 
   const orderPrice = menus.reduce((acc, menu) => acc + menu.price, 0);
-  const deliveryFee = store?.deliveryFee ?? 0;
+  const deliveryFee = menus.length > 0 ? 2000 : 0;
   const totalPrice = orderPrice + deliveryFee;
   const minDeliveryPrice = store?.minDeliveryPrice ?? 0;
   const isBelowMinPrice = menus.length > 0 && orderPrice < minDeliveryPrice;
   const canOrder = menus.length > 0 && !isBelowMinPrice;
   const formatPrice = (price: number) => price.toLocaleString();
+  const handleCancelOrder = () => {
+    clearCart();
+    navigate("/store");
+  };
 
   return (
     <div className="relative min-h-screen w-[510px] pb-[150px] text-left font-[pretendard]">
+      <TopBar showCancel onCancel={handleCancelOrder} />
       <div className="bg-[#F2F4F6] w-full h-[20px]"></div>
       <div className="px-[24px] pt-[24px]">
         <div className="flex items-center justify-between pb-[12px] text-[17px] font-bold">

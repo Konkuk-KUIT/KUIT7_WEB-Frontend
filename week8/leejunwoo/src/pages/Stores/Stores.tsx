@@ -1,12 +1,14 @@
 import { useParams } from "react-router-dom";
-import stores from "../../models/stores";
 import starImg from "../../assets/star.svg";
 import MenuItem from "../../components/MenuItem/MenuItem";
 import OrderBar from "../../components/OrderBar/OrderBar";
+import useStoreStore from "./useStoreStore";
 
 const Stores = () => {
   const {storeId} = useParams();
-  const store = stores.find((store) => store.id === Number(storeId))
+  // const store = stores.find((store) => store.id === Number(storeId))
+  const getStoreById = useStoreStore((state) => state.getStoreById);
+  const store = getStoreById(Number(storeId));
   if(!store) return;
   return (
     <div className="bg-white text-left w-[390px] relative">

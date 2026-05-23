@@ -3,9 +3,14 @@ import CategoryButton from '../components/CategoryButton';
 import OrderBar from '../components/OrderBar';
 import { categories } from '../models/stores';
 
+import { useCart } from '../context/CartContext';
+
 export default function Home() {
+  const { totalPrice } = useCart();
   return (
-    <div className="w-[390px] min-h-screen mx-auto bg-white pb-20">
+    
+    // <div className="w-[390px] min-h-screen mx-auto bg-white pb-20">
+    <div className="min-h-screen bg-white pb-20">
       <div className="px-5 pt-6 pb-4">
         <p className="text-xl font-extrabold text-gray-900 mb-1">오늘은 무엇을 먹을까요?</p>
         <Link to="/store" className="text-sm text-gray-400">
@@ -21,7 +26,7 @@ export default function Home() {
         ))}
       </div>
 
-      <OrderBar totalPrice={12100} to="/cart" />
+      <OrderBar totalPrice={totalPrice} to="/cart" />
     </div>
   );
 }

@@ -8,9 +8,9 @@ export default function Stores() {
   const { totalPrice } = useCart();
 
   return (
-    <div className="min-h-screen bg-white pb-20">
+    <div className="flex flex-col h-full">
       <TopBar title="샐러드" showBack />
-      <div className="px-5">
+      <div className="flex-1 overflow-y-auto px-5">
         {stores.map((store) => (
           <StoreCard key={store.id} store={store} />
         ))}

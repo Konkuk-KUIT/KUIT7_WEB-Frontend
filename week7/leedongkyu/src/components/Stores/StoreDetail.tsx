@@ -1,15 +1,9 @@
 import MenuItem from "../MenuItem/MenuItem";
-
-interface Menu {
-  id: number;
-  name: string;
-  isBest: boolean;
-  price: number;
-  ingredients: string;
-}
+import type { Menu } from "../../lib/types";
 
 interface StoreDetailProps {
   store: {
+    id: number;
     name: string;
     rate: number;
     reviewCnt: number;
@@ -55,7 +49,7 @@ export default function StoreDetail({ store }: StoreDetailProps) {
         <h2 className="mb-3 text-base font-semibold text-gray-500">샐러드</h2>
         <div className="flex flex-col">
           {store.menus.map((menu) => (
-            <MenuItem key={menu.id} menu={menu} />
+            <MenuItem key={menu.id} menu={menu} storeId={store.id} />
           ))}
         </div>
       </section>

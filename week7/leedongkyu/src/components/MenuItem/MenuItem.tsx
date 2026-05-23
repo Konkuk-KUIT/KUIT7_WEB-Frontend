@@ -1,18 +1,21 @@
 import Button from "../ui/Button";
-
-interface Menu {
-  name: string;
-  price: number | string;
-  ingredients: string;
-  isBest?: boolean;
-}
+import useCartStore from "../Cart/cart.store";
+import type { Menu } from "../../lib/types";
 
 interface MenuItemProps {
   menu: Menu;
+  storeId: number;
 }
 
-const MenuItem = ({ menu }: MenuItemProps) => {
-  const handleAddMenu = () => {};
+const MenuItem = ({ menu, storeId }: MenuItemProps) => {
+  const { addMenu } = useCartStore();
+  const { clearCart } = useCartStore();
+  const cartstoreId = useCartStore((state) => state.storeId);
+
+  const clearCartAndAddMenu = () => {
+    clearCart();
+    addMenu(menu, storeId);
+  }
 
   return (
     <article className="flex min-h-28 w-full items-center gap-3">
@@ -34,7 +37,17 @@ const MenuItem = ({ menu }: MenuItemProps) => {
         </p>
       </div>
       <Button
-        onClick={handleAddMenu}
+        onClick={() => {
+          if (cartstoreId !== null && storeId !== cartstoreId) {
+            const shouldReplace = confirm("다른 가게의 메뉴가 장바구니에 담겨있습니다. 기존 메뉴를 삭제하고 새 메뉴를 담으시겠습니까?");
+
+            if (shouldReplace) {
+              clearCartAndAddMenu();
+            }
+            return;
+          }
+          addMenu(menu, storeId);
+        }}
         type="button"
         size="xs"
       >

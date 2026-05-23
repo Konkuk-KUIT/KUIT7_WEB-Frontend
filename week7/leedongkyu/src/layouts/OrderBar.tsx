@@ -1,15 +1,20 @@
 import Button from "../components/ui/Button";
 import { Outlet } from "react-router-dom";
-interface Menu {
-  price: number;
-}
+import type { Menu } from "../lib/types";
+import useCartStore from "../components/Cart/cart.store";
+import { useNavigate } from "react-router-dom";
 
 const OrderBar = () => {
-  const menus: Menu[] = [];
+  const menus: Menu[] = useCartStore((state) => state.menus);
+  const navigate = useNavigate();
 
-  const handleOrder = () => {};
+  const handleOrder = () => {
+    navigate("/cart");
+  };
 
-  const totalPrice = menus.reduce((acc, cur) => acc + cur.price, 0);
+  const totalPrice = menus.reduce((total, menu) => {
+    return total + Number(menu.price);
+  }, 0);
 
   return (
 

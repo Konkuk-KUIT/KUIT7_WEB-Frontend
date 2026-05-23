@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Button from "../Button";
-import useCartStore from "../../pages/Stores/useCartStore";
+import useCartStore from "../../store/useCartStore";
 
 interface Store {
   id: number;

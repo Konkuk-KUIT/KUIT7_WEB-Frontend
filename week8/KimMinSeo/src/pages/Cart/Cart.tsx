@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 import Header from "../../components/Header";
-import useCartStore from "../../pages/Stores/useCartStore";
+import useCartStore from "../../store/useCartStore";
 
 const Cart = () => {
   const navigate = useNavigate();

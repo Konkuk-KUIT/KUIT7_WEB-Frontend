@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import Button from "../Button";
-import useCartStore from "../../pages/Stores/useCartStore";
+import useCartStore from "../../store/useCartStore";
 
 const OrderBar = () => {
   const navigate = useNavigate();

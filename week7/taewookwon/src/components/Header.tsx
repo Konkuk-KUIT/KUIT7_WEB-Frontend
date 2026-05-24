@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import arrowIcon from '../assets/arrow.svg'; // ← 실제 파일명에 맞게
+import arrowIcon from '../assets/arrow.svg';
 
 const Header = () => {
   const navigate = useNavigate();

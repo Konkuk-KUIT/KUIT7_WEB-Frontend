@@ -2,6 +2,7 @@ import Header from '../../components/Header';
 import OrderBar from '../../components/OrderBar';
 import StoreItem from '../../components/StoreItem';
 import { stores } from '../../models/stores';
+import { Link } from 'react-router-dom';
 
 const Stores = () => {
   return (
@@ -15,15 +16,16 @@ const Stores = () => {
 
         <div className="absolute left-0 top-[147px] flex flex-col">
           {stores.map((store, index) => (
-            <StoreItem
-              key={store.id}
-              store={store}
-              rank={index < 3 ? index + 1 : undefined}
-            />
+            <Link key={store.id} to={`/store/${store.id}`}>
+              <StoreItem
+                store={store}
+                rank={index < 3 ? index + 1 : undefined}
+              />
+            </Link>
           ))}
         </div>
 
-        <OrderBar totalPrice={12100} />
+        <OrderBar />
       </div>
     </div>
   );

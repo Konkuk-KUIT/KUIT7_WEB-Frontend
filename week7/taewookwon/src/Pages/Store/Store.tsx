@@ -67,7 +67,7 @@ const Store = () => {
             ))}
           </div>
 
-          <OrderBar totalPrice={12100} />
+          <OrderBar />
         </div>
       </div>
     );

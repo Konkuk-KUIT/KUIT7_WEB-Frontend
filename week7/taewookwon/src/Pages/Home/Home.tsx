@@ -1,6 +1,7 @@
 import FoodCard from '../../components/FoodCard';
 import { categories, userAddress } from '../../models/stores';
 import OrderBar from '../../components/OrderBar';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -16,16 +17,27 @@ const Home = () => {
         </div>
 
         <div className="absolute left-[24px] top-[251px] grid grid-cols-3 gap-x-[9px] gap-y-[10px]">
-          {categories.map((category) => (
-            <FoodCard
-              key={category.id}
-              name={category.name}
-              image={category.image}
-            />
-          ))}
+          {categories.map((category) => {
+            // 샐러드(id: 2)만 Link로 감싸서 클릭 가능하게
+            if (category.id === 2) {
+              return (
+                <Link key={category.id} to="/store">
+                  <FoodCard name={category.name} image={category.image} />
+                </Link>
+              );
+            }
+            // 나머지는 그냥 카드만
+            return (
+              <FoodCard
+                key={category.id}
+                name={category.name}
+                image={category.image}
+              />
+            );
+          })}
         </div>
 
-        <OrderBar totalPrice={12100} />
+        <OrderBar />
       </div>
     </div>
   );

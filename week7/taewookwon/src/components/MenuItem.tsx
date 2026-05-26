@@ -1,10 +1,19 @@
+import { useParams } from 'react-router-dom';
 import type { Menu } from '../models/stores';
+import useCartStore from '../Pages/Store/useCartStore';
 
 type MenuItemProps = {
   menu: Menu;
 };
 
 const MenuItem = ({ menu }: MenuItemProps) => {
+  const { storeId } = useParams();
+  const addMenu = useCartStore((state) => state.addMenu);
+
+  const handleAddMenu = () => {
+    addMenu(menu, Number(storeId));
+  };
+
   return (
     <div className="relative w-[390px] h-[110px] overflow-hidden">
       <div className="absolute left-[24px] top-[28px] w-[54px] h-[54px] bg-[#ececec] rounded-full" />
@@ -27,7 +36,10 @@ const MenuItem = ({ menu }: MenuItemProps) => {
         {menu.description}
       </p>
 
-      <button className="absolute left-[314px] top-[40px] w-[52px] h-[32px] bg-[#3182f6] rounded-[8px] text-white text-[13px] font-medium">
+      <button
+        onClick={handleAddMenu}
+        className="absolute left-[314px] top-[40px] w-[52px] h-[32px] bg-[#3182f6] rounded-[8px] text-white text-[13px] font-medium"
+      >
         담기
       </button>
     </div>

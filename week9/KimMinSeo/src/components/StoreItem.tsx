@@ -100,9 +100,9 @@ const StoreItem = ({ store, rank, onDelete, onEdit }: StoreItemProps) => {
 export default StoreItem;
 
 const ItemLink = styled(Link)`
-  width: 390px;
   min-height: 116px;
   padding: 16px 24px;
+  width: 390px;
 
   display: flex;
   align-items: flex-start;

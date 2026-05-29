@@ -1,0 +1,49 @@
+{
+  "stores": [
+    {
+      "id": "4",
+      "name": "THE 샐러드가득담은",
+      "rate": 5,
+      "reviewCnt": 919,
+      "minDeliveryTime": 13,
+      "maxDeliveryTime": 30,
+      "minDeliveryPrice": 10000,
+      "deliveryFee": 2000,
+      "menus": [
+        {
+          "id": 1,
+          "name": "쿼리노아 비트 샐러드",
+          "isBest": true,
+          "price": 9200,
+          "ingredients": "비트, 쿼리노아, 아몬드, 양배추, 사과 사이더 드레싱"
+        },
+        {
+          "id": 2,
+          "name": "펌프킨 넛 샐러드",
+          "isBest": false,
+          "price": 8700,
+          "ingredients": "호박, 피칸, 크랜베리, 아루굴라, 발사믹 드레싱"
+        }
+      ]
+    },
+    {
+      "name": "ㄹㄹ",
+      "rate": 4.5,
+      "reviewCnt": 0,
+      "minDeliveryTime": 20,
+      "maxDeliveryTime": 40,
+      "deliveryFee": 3000,
+      "id": "ngWKC1JwMF4"
+    },
+    {
+      "name": "ㅁㅁ",
+      "rate": 4.5,
+      "reviewCnt": 0,
+      "minDeliveryTime": 20,
+      "maxDeliveryTime": 40,
+      "deliveryFee": 3000,
+      "id": "UGqUlXfyYgE"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

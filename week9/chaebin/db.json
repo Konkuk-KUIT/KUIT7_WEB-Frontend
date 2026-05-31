@@ -1,0 +1,16 @@
+{
+  "stores": [
+    {
+      "name": "edieee",
+      "rate": 0,
+      "reviewCnt": 0,
+      "minDeliveryTime": 20,
+      "maxDeliveryTime": 40,
+      "minDeliveryPrice": 10000,
+      "deliveryFee": 2000,
+      "menus": [],
+      "id": "wisiu64gEXY"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
